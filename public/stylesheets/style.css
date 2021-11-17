@@ -29,6 +29,10 @@ header .botoes {
   width: auto;
 }
 
+.main-index {
+	padding-bottom: 20px !important;
+}
+
 .card {
 	margin-bottom: 20px;
 	border: none;

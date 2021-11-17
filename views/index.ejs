@@ -1,17 +1,21 @@
 <%- include('./partials/header.ejs') %>
 
 <body class='bg-dark'>
-<div class="modal modal-alert position-static d-block py-5" tabindex="-1" role="dialog" id="modalChoice">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content rounded-4 shadow">
-      <div class="modal-body p-4 text-center">
-        <h5 class="mb-4">Seja bem-vindo!</h5>
-        <p class="mb-0">O que você deseja?</p>
+<div class="container my-2">
+  <div class="row p-4 pt-2 pb-0 pe-lg-0 align-items-center rounded-3 border shadow-lg">
+    <div class="main-index col-lg-7 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1 text-muted mb-3">Crie o seu currículo para a área de tecnologia gratuitamente!</h1>
+      <p class="lead text-muted mb-3">Desenvolvido especialmente para estudantes e profissionais na área de tecnologia que
+        desejam montar um currículo que se destaque, mostrando as suas experiências e habilidades de forma especial. <br> 
+        Cadastre-se e monte o seu agora mesmo:
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Entrar</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Cadastrar</button>
       </div>
-      <div class="modal-footer flex-nowrap p-0">
-        <a href="/login" class="btn btn-primary w-100 btn-lg"><input type='button' value='Entrar' class="btn btn-primary w-100 btn-lg"></input></a>
-        <a href="/cadastrar" class="btn btn-info w-100 btn-lg"><input type='button' value='Cadastre-se' class="btn btn-info w-100 btn-lg"></input></a>
-      </div>
+    </div>
+    <div class="ms-0 col-lg-5 p-0 overflow-hidden shadow-lg">
+      <img class='rounded border border-dark' src="./images/exemplo.png" alt="" width="720">
     </div>
   </div>
 </div>

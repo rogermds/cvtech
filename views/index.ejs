@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs') %>
+
+<body class='bg-dark'>
+<div class="modal modal-alert position-static d-block py-5" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-4">Seja bem-vindo!</h5>
+        <p class="mb-0">O que você deseja?</p>
+      </div>
+      <div class="modal-footer flex-nowrap p-0">
+        <a href="/login" class="btn btn-primary w-100 btn-lg"><input type='button' value='Entrar' class="btn btn-primary w-100 btn-lg"></input></a>
+        <a href="/cadastrar" class="btn btn-info w-100 btn-lg"><input type='button' value='Cadastre-se' class="btn btn-info w-100 btn-lg"></input></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

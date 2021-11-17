@@ -1,17 +1,44 @@
 <%- include('./partials/header.ejs') %>
 
     <body class='bg-dark'>
-        <div class="container mt-5">
-            <div class="row col-md-6 card">
-                <form onsubmit="event.preventDefault()" class="box">
-                    <h1 class='text-secondary mb-4'>Entrar</h1>
-                    <p class="text-muted"> Entre com seu email e senha: </p>
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Senha">
-                    <a class="forgot text-muted text-decoration-none" href="/cadastrar">Não tem cadastro? Cadastre-se
-                        aqui!</a>
-                    <input type="submit" name="" value="Login" href="#">
-                </form>
+        <main role="main">
+        
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <div class="container text-muted">
+                    <h1 class="display-3">Seja bem vindo, usuário!</h1>
+                    <p>Esta é a sua página de perfil. Aqui você pode criar, visualizar, editar e excluir os seus currículos cadastrados. <br> 
+                        Caso tenha dificuldade, clique no botão abaixo para visualizar um tutorial em vídeo explicando como a plataforma funciona:</p>
+                    <p><a class="btn btn-primary btn-lg mb-2" href="#" role="button">Tutorial »</a></p>
+                </div>
             </div>
-        </div>
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-muted">
+                        <h2>Criação</h2>
+                        <p>Crie um novo currículo com as suas informações, experiências, habilidades e mostre ao recrutador que você tem o perfil
+                            perfeito para a vaga pretendida. Um currículo que chame a atenção dos recrutadores aumentam as chances de você ser chamado para uma entrevista! </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">Crie o seu currículo »</a></p>
+                    </div>
+                    <div class="col-md-4 text-muted">
+                        <h2>Edição</h2>
+                        <p>Edite um currículo já cadastrado em seu perfil. Mantenha as suas informações atualizadas para estar sempre a frente de outros candidatos. 
+                            Um currículo atualizado é imprescindível para que o recrutador saiba desde o início todas as habilidades que você possui. </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">Edite um currículo cadastrado »</a></p>
+                    </div>
+                    <div class="col-md-4 text-muted">
+                        <h2>Doação</h2>
+                        <p> Tudo foi desenvolvido de forma gratuita, pensando naqueles que não conseguem entrevistas por não ter um currículo adequado. 
+                            Para contribuir com o projeto, e me ajudar a desenvolver mais ferramentas como essa, clique no botão abaixo e saiba como: </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">Contribuir com a página »</a></p>
+                    </div>
+                </div>
+        
+                <hr>
+        
+            </div> <!-- /container -->
+        
+        </main>
+
         <%- include('./partials/footer.ejs') %>

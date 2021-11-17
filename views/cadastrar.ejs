@@ -2,34 +2,34 @@
 
     <body class='vsc-initialized bg-dark'>
 
-        <div class="signup-form">
+        <div class="signup-form rounded">
             <form action="/examples/actions/confirmation.php" method="post">
-                <h2 class='text-secondary'>Register</h2>
-                <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+                <h2 class='text-secondary'>Cadastre-se</h2>
+                <p class="hint-text">Crie a sua conta. É grátis é só leva um minuto! </p>
                 <div class="form-group">
-                    <div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name"
+                    <div class="col"><input type="text" class="form-control" name="first_name" placeholder="Nome completo"
                             required="required"></div>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password"
+                    <input type="password" class="form-control" name="password" placeholder="Senha"
                         required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirme a sua senha"
                         required="required">
                 </div>
                 <div class="form-group">
-                    <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a class='text-muted'
-                            href="#">Terms of Use</a> &amp; <a class='text-muted' href="#">Privacy Policy</a></label>
+                    <label class="form-check-label"><input type="checkbox" required="required"> Eu aceito os <a class='text-muted'
+                            href="#">Termos de Uso</a> &amp; <a class='text-muted' href="#">Políticas de Privacidade</a></label>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Register Now</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
                 </div>
             </form>
-            <div class="retornar-login text-center">Already have an account? <a href="#">Sign in</a></div>
+            <div class="retornar-login text-center">Já tem uma conta? <a href="#">Entre agora</a></div>
         </div>
 
         <%- include('./partials/footer.ejs') %>

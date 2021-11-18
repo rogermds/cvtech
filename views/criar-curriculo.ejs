@@ -1,52 +1,49 @@
 <%- include('./partials/header.ejs') %>
 
     <body class='vsc-initialized bg-dark'>
-
         <div class="cadastrar-curriculo container text-muted">
             <div class="row">
                 <h1>Cadastre seu currículo</h1>
                 <hr>
             </div>
             <div class="row">
-                <div class="col-md-3">Preencha as suas informações no formulário ao lado e após finalizar verifique o resultado ao final da página!</div>
-
+                <div class="col-md-3">Preencha as suas informações no formulário ao lado e após finalizar, cadastre o seu currículo ao final da página!</div>
                 <div class="col-md-9">
                     <form>
                         <div class="panel-body">
                             <div class="form-group">
-
                                 <div class="col-md-11 control-label">
                                     <p class="help-block text-danger">
-                                        <h11>*</h11> Campo Obrigatório
+                                        <h11>*</h11> Campos obrigatório
                                     </p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="nome">Nome <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="nome">Nome: <h11>*</h11></label>
                                 <div class="col-md-6">
                                     <input name="nome" placeholder="" class="form-control input-md" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="profissao">Profissão <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="profissao">Profissão: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="profissao" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="github">GitHub <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="github">GitHub: </label>
                                 <div class="col-md-4">
                                     <input name="github" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="linkedin">LinkedIn <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="linkedin">LinkedIn: </label>
                                 <div class="col-md-4">
                                     <input name="linkedin" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group w-25">
-                                <label class="control-label w-25" for="uf">UF</label><br>
+                                <label class="control-label w-25" for="uf">UF:<h11> *</h11></label><br>
                                 <select id="uf" name="uf" class='form-control w-75'>
                                     <option disabled selected>Selecione UF</option>
                                     <option value="AC">Acre</option>
@@ -80,31 +77,31 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="cidade">Cidade <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="cidade">Cidade: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="cidade" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="pais">País <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="pais">País: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="pais" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="email">Email <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="email">Email: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="email" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="celular">Celular para contato <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="celular">Celular para contato: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="celular" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="whatsapp">Whatsapp <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="whatsapp">Whatsapp: <h11>*</h11></label>
                                 <div class="col-md-4">
                                     <input name="whatsapp" placeholder="" class="form-control" required="" type="text">
                                 </div>
@@ -125,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label" for="Nome">Terceiro parágrafo: <h11>*</h11></label>
+                                <label class="col-md-2control-label" for="Nome">Terceiro parágrafo:</label>
                                 <div class="col-md-4">
                                     <input name="resumo3" placeholder="" class="form-control" required="" type="text">
                                 </div>
@@ -151,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Experiência mais importante ou com maior tempo:<h11>*</h11></label>
+                                <label class="col-md-2control-label">Experiência mais importante ou com maior tempo:</label>
                                 <div class="col-md-7 mb-2">
                                     <input name="expempresa3" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
                                     <input name="expperiodo3" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
@@ -171,7 +168,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Formação ou curso: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Formação ou curso:</label>
                                 <div class="col-md-7 mb-2">
                                     <input name="cursonome2" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
                                     <input name="cursoperiodo2" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
@@ -180,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Formação ou curso: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Formação ou curso:</label>
                                 <div class="col-md-7 mb-2">
                                     <input name="cursonome3" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
                                     <input name="cursoperiodo3" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
@@ -208,28 +205,28 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Hardskill 3: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Hardskill 3: </label>
                                 <div class="col-md-7 mb-2">
                                     <input name="hardnome3" placeholder="Ex.: Node.js" class="form-control mb-1" required="" type="text">
                                     <input name="hardnota3" placeholder="Ex.: 85%" class="form-control mb-1" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Hardskill 4: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Hardskill 4: </label>
                                 <div class="col-md-7 mb-2">
                                     <input name="hardnome4" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
                                     <input name="hardnota4" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Hardskill 5: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Hardskill 5: </label>
                                 <div class="col-md-7 mb-2">
                                     <input name="hardnome5" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
                                     <input name="hardnota5" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Hardskill 6: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Hardskill 6: </label>
                                 <div class="col-md-7 mb-2">
                                     <input name="hardnome6" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
                                     <input name="hardnota6" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
@@ -273,7 +270,7 @@
                             <label class="col-md-2 control-label" for="Cadastrar"></label>
                             <div class="col-md-8 mb-4">
                                 <button id="cadastrar" name="cadastrar" class="btn btn-success px-4 py-2" type="Submit">Cadastrar</button>
-                                <button id="cancelar" name="cancelar" class="btn btn-danger px-4 py-2" type="Reset">Cancelar</button>
+                                <a href='/usuario/curriculo' id="voltar" name="voltar" class="btn btn-danger px-4 py-2">Voltar</a>
                             </div>
                         </div>
                     </form>

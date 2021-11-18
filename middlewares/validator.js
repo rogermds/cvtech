@@ -14,8 +14,8 @@ const validaCamposCadastoUsuario = [
                     return confirmarSenha;
                 }
             })
-];
-
+        ]
+        
 module.exports = {
     validaCamposCadastoUsuario
 }

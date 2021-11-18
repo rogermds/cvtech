@@ -8,13 +8,15 @@ const usuarioController = {
 	},
 	getCadastrar: (req, res, next) => {
 		res.render("cadastrar", {
-			errors: []
+			errors: [],
+			old: []
 		});
 	},
 	postCadastrar: async (req, res, next) => {
 		const errors = validationResult(req);
 		var dados = req.body
-		if(errors.isEmpty()){
+		let old = req.body;
+		if(errors.isEmpty() && dados.termos){
 			dados.senha = bcrypt.hashSync(dados.senha, 10)
 				let usuarioCadastrado = await Usuario.create(dados);
 				return res.redirect('/login');
@@ -22,7 +24,8 @@ const usuarioController = {
 		else{
 			console.log(errors);
 			return res.render('cadastrar',{
-				errors: errors.mapped()
+				errors: errors.mapped(),
+				old: old
 			})
 		}
 		

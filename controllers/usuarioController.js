@@ -1,5 +1,6 @@
 const { validationResult, body } = require("express-validator");
 const {Sequelize, Usuario} = require("../models");
+const bcrypt = require('bcryptjs')
 
 const usuarioController = {
 	getUsuarioIndex: (req, res) => {
@@ -12,15 +13,13 @@ const usuarioController = {
 		const errors = validationResult(req);
 		var dados = req.body
 		if(errors.isEmpty()){
-			if(dados.senha === dados.confirmarSenha){
-				console.log("entrou sem errors");
+			dados.senha = bcrypt.hashSync(dados.senha, 10)
 				let usuarioCadastrado = await Usuario.create(dados);
 				return res.send(usuarioCadastrado);
-			}
-			
 		}
 		console.log(errors);
 	},
+	
 };
 
 module.exports = usuarioController;

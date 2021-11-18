@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING(15)
       },
       email: {
-        type: Sequelize.STRING(120)
+        type: Sequelize.STRING(120),
+        unique: true
       },
       senha: {
         type: Sequelize.STRING

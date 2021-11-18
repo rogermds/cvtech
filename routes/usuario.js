@@ -6,5 +6,6 @@ var curriculoController = require("../controllers/curriculoController");
 router.get("/", usuarioController.getUsuarioIndex);
 router.get("/curriculo", curriculoController.getVerCurriculo);
 router.get("/curriculo/criar", curriculoController.getCriarCurriculo);
+router.post("/curriculo/criar", curriculoController.postCriarCurriculo);
 
 module.exports = router;

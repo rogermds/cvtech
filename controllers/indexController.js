@@ -18,7 +18,11 @@ const indexController = {
 			attributes: ['email', 'senha', 'nome', 'id']
 		}).then(resultado => {
 				if (bcrypt.compareSync(dadosBody.senha, resultado.dataValues.senha)) {
-					let sessaoUsuario = { id: resultado.dataValues.id, nome: resultado.dataValues.nome, email: resultado.dataValues.email };
+					let sessaoUsuario = { 
+						id: resultado.dataValues.id, 
+						nome: resultado.dataValues.nome, 
+						email: resultado.dataValues.email 
+					};
 					req.session.user = sessaoUsuario;
 					res.locals.user = sessaoUsuario;
 					return res.render('usuario')

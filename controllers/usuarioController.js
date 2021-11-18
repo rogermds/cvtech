@@ -7,7 +7,9 @@ const usuarioController = {
 		res.render("usuario");
 	},
 	getCadastrar: (req, res, next) => {
-		res.render("cadastrar");
+		res.render("cadastrar", {
+			errors: []
+		});
 	},
 	postCadastrar: async (req, res, next) => {
 		const errors = validationResult(req);
@@ -15,9 +17,15 @@ const usuarioController = {
 		if(errors.isEmpty()){
 			dados.senha = bcrypt.hashSync(dados.senha, 10)
 				let usuarioCadastrado = await Usuario.create(dados);
-				return res.send(usuarioCadastrado);
+				return res.redirect('/login');
 		}
-		console.log(errors);
+		else{
+			console.log(errors);
+			return res.render('cadastrar',{
+				errors: errors.mapped()
+			})
+		}
+		
 	},
 	
 };

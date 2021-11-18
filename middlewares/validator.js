@@ -4,6 +4,7 @@ const { Sequelize, Usuario } = require("../models");
 const validaCamposCadastoUsuario = [
     check('nome').trim().notEmpty().withMessage("Não há nome").bail().isLength({min:3}).withMessage("Nome muito curto"),
     check('sobrenome').trim().notEmpty().withMessage("Não há sobrenome").bail().isLength({min:3}).withMessage("sobrenome muito curto"),
+    check('celular').trim().notEmpty().withMessage("Informar celular").bail().isLength({min:10}).withMessage("Numero muito curto"),
     check("email").trim().notEmpty().withMessage("Informar email").bail().isEmail().withMessage("Informar Email valido").custom(async (emailBody) => {
 			const procuraEmail = await Usuario.findOne({
 				where: {

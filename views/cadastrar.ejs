@@ -7,27 +7,69 @@
                 <h2 class='text-secondary'>Cadastre-se</h2>
                 <p class="hint-text">Crie a sua conta. É grátis é só leva um minuto! </p>
                 <div class="form-group">
-                    <div class="col"><input type="text" class="form-control text-dark" name="nome" placeholder="Nome"
-                            required="required"></div>
+                    <div class="col">
+                        <%if(errors.nome){%>
+                            <input type="text" class="form-control text-dark" name="nome" value="<%=errors.nome.value%>"
+                            required="required">
+                            <p class="text-danger"><%=errors.nome.msg%></p>
+                        <%} else{%>
+                        <input type="text" class="form-control text-dark" name="nome" placeholder="Nome"
+                            required="required">
+                        <% } %>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <div class="col"><input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
-                            required="required"></div>
+                    <div class="col">
+                        <%if(errors.sobrenome){%>
+                            <input type="text" class="form-control text-dark" name="sobrenome" value="<%=errors.sobrenome.value%>"
+                            required="required">
+                            <p class="text-danger"><%=errors.sobrenome.msg%></p>
+                        <%} else{%>
+                            <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
+                            required="required">
+                        <% } %>
+                        </div>
                 </div>
                 <div class="form-group">
-                    <div class="col"><input type="text" class="form-control text-dark" name="celular" placeholder="Celular"
-                            required="required"></div>
+                    <div class="col">
+                    <%if(errors.celular){%>
+                        <input type="text" class="form-control text-dark" name="sobrenome" value="<%=errors.celular.value%>"
+                            required="required">
+                            <p class="text-danger"><%=errors.celular.msg%></p>
+                    <%} else{%>
+                        <input type="text" class="form-control text-dark" name="celular" placeholder="Celular"
+                            required="required">
+                    <% } %>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control text-dark" name="email" placeholder="Email" required="required">
+                    <%if(errors.email){%>
+                        <input type="email" class="form-control text-dark" name="email" value="<%=errors.email.value%>"
+                            required="required">
+                        <p class="text-danger"><%=errors.email.msg%></p>
+                    <%} else{%>
+                        <input type="email" class="form-control text-dark" name="email" placeholder="Email" required="required">
+                    <% } %>    
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control text-dark" name="senha" placeholder="Senha"
+                    <%if(errors.senha){%>
+                        <input type="password" class="form-control text-dark" name="senha" value="<%=errors.senha.value%>"
+                            required="required">
+                        <p class="text-danger"><%=errors.senha.msg%></p>
+                    <%} else{%>
+                        <input type="password" class="form-control text-dark" name="senha" placeholder="Senha"
                         required="required">
+                    <% } %>      
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha"
+                    <%if(errors.senha){%>
+                        <input type="password" class="form-control text-dark" name="senha" placeholder="Confirme a sua senha"
+                            required="required">
+                        <p class="text-danger"><%=errors.senha.msg%></p>
+                    <%} else{%>
+                        <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha"
                         required="required">
+                    <% } %> 
                 </div>
                 <div class="form-group">
                     <label class="form-check-label"><input type="checkbox" required="required"> Eu aceito os <a class='text-muted'

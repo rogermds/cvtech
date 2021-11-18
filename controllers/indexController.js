@@ -5,9 +5,9 @@ const indexController = {
 	getLogin: (req, res) => {
 		res.render("login");
 	},
-	getCadastrar: (req, res) => {
+	/*getCadastrar: (req, res) => {
 		res.render("cadastrar");
-	},
+	},*/
 };
 
 module.exports = indexController;

@@ -142,7 +142,7 @@ p.text-muted {
 .signup-form h2:after {
 	content: "";
 	height: 2px;
-	width: 30%;
+	width: 25%;
 	background: #d4d4d4;
 	position: absolute;
 	top: 50%;
@@ -220,4 +220,8 @@ p.text-muted {
 
 .retornar-login {
   color: #636363;
+}
+
+.cadastrar-curriculo h11 {
+	color: #dc3545;
 }

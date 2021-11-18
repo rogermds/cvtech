@@ -1,10 +1,13 @@
 const usuarioController = {
-	getCurriculo: (req, res) => {
-		res.render("curriculo");
-	},
 	getUsuarioIndex: (req, res) => {
-        res.render('usuario')
-    }
+		res.render("usuario");
+	},
+	getVerCurriculo: (req, res) => {
+		res.render("ver-cuculo");
+	},
+	getCriarCurriculo: (req, res) => {
+		res.render("criar-curriculo");
+	},
 };
 
 module.exports = usuarioController;

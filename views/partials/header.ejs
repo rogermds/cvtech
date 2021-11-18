@@ -30,6 +30,20 @@
   </ul>
 
   <div class="botoes col-md-3 me-3 text-end">
-    <a href="/login"><button type="button" class="btn btn-primary">Entrar</button></a>
+    <%if(!sessao){%>
+      <a href="/login"><button type="button" class="btn btn-primary">Entrar</button></a>
+    <%} else{%>
+      <div class="dropdown show">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Olá <%=locals.sessao.nome%>
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item text-dark" href="/usuario">Perfil</a>
+          <a class="dropdown-item text-dark" href="/curriculo">Curriculo</a>
+          <a class="dropdown-item text-dark" href="/logout">Sair</a>
+        </div>
+      </div>
+    <%}%>
   </div>
 </header>

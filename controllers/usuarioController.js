@@ -19,7 +19,9 @@ const usuarioController = {
 		if(errors.isEmpty() && dados.termos){
 			dados.senha = bcrypt.hashSync(dados.senha, 10)
 				let usuarioCadastrado = await Usuario.create(dados);
-				return res.redirect('/login');
+				return res.render('login', {
+					created: true
+				});
 		}
 		else{
 			console.log(errors);

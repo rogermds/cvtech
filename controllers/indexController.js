@@ -7,7 +7,13 @@ const indexController = {
 		res.render("index");
 	},
 	getLogin: (req, res) => {
-		res.render("login");
+		res.render("login", {
+			created: null
+		});
+	},
+	getLogout: (req, res, next) =>{
+		req.session.destroy();
+		res.redirect("/");
 	},
 	postLogin: async (req, res) => {
 		let dadosBody = req.body
@@ -25,7 +31,7 @@ const indexController = {
 					};
 					req.session.user = sessaoUsuario;
 					res.locals.user = sessaoUsuario;
-					return res.render('usuario')
+					return res.redirect('/usuario')
 				}
 			}).catch(
 				error => {

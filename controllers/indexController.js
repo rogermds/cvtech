@@ -10,6 +10,8 @@ const indexController = {
 	getLogin: (req, res) => {
 		res.render("login", {
 			created: null,
+			errors: [],
+			old: [],
 		});
 	},
 	getLogout: (req, res, next) => {
@@ -17,6 +19,7 @@ const indexController = {
 		res.redirect("/");
 	},
 	postLogin: async (req, res) => {
+		const errors = validationResult(req);
 		let dadosBody = req.body;
 		let usuarioLogin = await Usuario.findOne({
 			where: {
@@ -25,6 +28,7 @@ const indexController = {
 			attributes: ["email", "senha", "nome", "id"],
 		})
 			.then((resultado) => {
+				if (errors.isEmpty()) {
 				if (bcrypt.compareSync(dadosBody.senha, resultado.dataValues.senha)) {
 					let sessaoUsuario = {
 						id: resultado.dataValues.id,
@@ -34,11 +38,19 @@ const indexController = {
 					req.session.user = sessaoUsuario;
 					res.locals.user = sessaoUsuario;
 					return res.redirect("/usuario");
+					}
+				} else {
+					console.log(errors);
+					return res.render("cadastrar", {
+						errors: errors.mapped(),
+						old: req.body,
+					});
 				}
 			})
-			.catch((error) => {
-				console.log(error);
-			});
+			.catch(
+				console.log('catch');
+				// res.redirect('/login')
+			);
 	},
 	getCadastrar: (req, res, next) => {
 		res.render("cadastrar", {
@@ -49,7 +61,6 @@ const indexController = {
 	postCadastrar: async (req, res, next) => {
 		const errors = validationResult(req);
 		var dados = req.body;
-		let old = req.body;
 		if (errors.isEmpty() && dados.termos) {
 			dados.senha = bcrypt.hashSync(dados.senha, 10);
 			let usuarioCadastrado = await Usuario.create(dados);

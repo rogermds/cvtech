@@ -30,6 +30,36 @@ const validaCamposCadastoUsuario = [
             })
         ]
 
+const validaCamposLogin = [
+    check("email").trim().notEmpty().withMessage("Digite seu email!").bail().isEmail().withMessage("Digite um email válido!").custom(async (emailBody) => {
+			const procuraEmail = await Usuario.findOne({
+				where: {
+					email: emailBody,
+				},
+			});
+            if (!procuraEmail) {
+                return Promise.reject("E-mail não existe! Cadastre-se para utilizar os nossos serviços.");
+            }
+			if (procuraEmail.email) {
+				return emailBody;
+			}
+		}),
+        check('senha').trim().notEmpty().withMessage("Digite sua senha corretamente!").bail().isLength({min:6}).withMessage("A senha deve conter no mínimo 6 caracteres!")
+            .custom(async (senhaBody) => {
+                    const procuraUsuario = await Usuario.findOne({
+                        where: {
+                            email: emailBody,
+                        }});
+                    if (procuraUsuario.senha !== senhaBody) {
+                        throw new Error("Senha incorreta!");
+                        } else {
+                            return senhaBody;
+                        }
+                })
+
+]
+
 module.exports = {
-    validaCamposCadastoUsuario
-}
+	validaCamposCadastoUsuario,
+	validaCamposLogin,
+};

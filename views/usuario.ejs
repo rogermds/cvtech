@@ -6,7 +6,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container text-muted">
-                    <h1 class="display-3">Seja bem vindo, usuário!</h1>
+                    <h1 class="display-3">Seja bem vindo, <%=locals.sessao.nome%>!</h1>
                     <p>Esta é a sua página de perfil. Aqui você pode criar, visualizar, editar e excluir os seus currículos cadastrados. <br> 
                         Caso tenha dificuldade, clique no botão abaixo para visualizar um tutorial em vídeo explicando como a plataforma funciona:</p>
                     <p><a class="btn btn-primary btn-lg mb-2" href="#" role="button">Tutorial »</a></p>
@@ -19,7 +19,7 @@
                         <h2>Criação</h2>
                         <p>Crie um novo currículo com as suas informações, experiências, habilidades e mostre ao recrutador que você tem o perfil
                             perfeito para a vaga pretendida. Um currículo que chame a atenção dos recrutadores aumentam as chances de você ser chamado para uma entrevista! </p>
-                        <p><a class="btn btn-secondary" href="/cadastrar/curriculo" role="button">Crie o seu currículo »</a></p>
+                        <p><a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie o seu currículo »</a></p>
                     </div>
                     <div class="col-md-4 text-muted">
                         <h2>Edição</h2>

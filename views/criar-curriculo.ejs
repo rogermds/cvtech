@@ -8,8 +8,7 @@
                 <hr>
             </div>
             <div class="row">
-                <div class="col-md-3">Preencha as suas informações no formulário ao lado e após finalizar verifique o
-                    resultado ao final da página!</div>
+                <div class="col-md-3">Preencha as suas informações no formulário ao lado e após finalizar verifique o resultado ao final da página!</div>
 
                 <div class="col-md-9">
                     <form>
@@ -23,39 +22,32 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="Nome">Nome <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="nome">Nome <h11>*</h11></label>
                                 <div class="col-md-6">
-                                    <input id="Nome" name="Nome" placeholder="" class="form-control input-md"
-                                        required="" type="text">
+                                    <input name="nome" placeholder="" class="form-control input-md" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="Nome">Profissão <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="profissao">Profissão <h11>*</h11></label>
                                 <div class="col-md-4">
-                                    <input id="Nome" name="Nome" placeholder="" class="form-control" required="" type="text">
+                                    <input name="profissao" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="Nome">GitHub <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="github">GitHub <h11>*</h11></label>
                                 <div class="col-md-4">
-                                    <input id="Nome" name="Nome" placeholder="" class="form-control" required="" type="text">
+                                    <input name="github" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="Nome">LinkedIn <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="linkedin">LinkedIn <h11>*</h11></label>
                                 <div class="col-md-4">
-                                    <input id="Nome" name="Nome" placeholder="" class="form-control" required="" type="text">
+                                    <input name="linkedin" placeholder="" class="form-control" required="" type="text">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label" for="Nome">LinkedIn <h11>*</h11></label>
-                                <div class="col-md-4">
-                                    <input id="Nome" name="Nome" placeholder="" class="form-control" required="" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="uf">UF</label><br>
-                                <select id="uf" name="uf" class='form-control'>
+                            <div class="form-group w-25">
+                                <label class="control-label w-25" for="uf">UF</label><br>
+                                <select id="uf" name="uf" class='form-control w-75'>
                                     <option disabled selected>Selecione UF</option>
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
@@ -87,26 +79,203 @@
                                     <option value="EX">Estrangeiro</option>
                                 </select>
                             </div>
-                            
-
-
-
-                        </div>
-
-
-
-
-
-
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="Cadastrar"></label>
-                            <div class="col-md-8">
-                                <button id="Cadastrar" name="Cadastrar" class="btn btn-success px-4 py-2" type="Submit">Cadastrar</button>
-                                <button id="Cancelar" name="Cancelar" class="btn btn-danger px-4 py-2" type="Reset">Cancelar</button>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="cidade">Cidade <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="cidade" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="pais">País <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="pais" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="email">Email <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="email" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="celular">Celular para contato <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="celular" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="whatsapp">Whatsapp <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="whatsapp" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-2control-label mb-2 bold">Digite aqui um breve resumo sobre você, suas softskills e suas hardskills em no máximo 
+                                3 parágrafos. Aconselhável no mínimo 2 parágrafos preenchidos. <h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Primeiro parágrafo: <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="resumo1" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Segundo parágrafo: <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="resumo2" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label" for="Nome">Terceiro parágrafo: <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input name="resumo3" placeholder="" class="form-control" required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-2control-label mb-2 bold" for="Nome">Digite aqui as suas experiências profissionais, mesmo que em outras 
+                                áres. É importante destacar a experiência mais recente e as 2 experiências mais importantes ou as que você permaneceu por 
+                                mais tempo.<h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Experiência mais recente: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="expempresa1" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
+                                    <input name="expperiodo1" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="expfuncao1" placeholder="Funções exercidas" class="form-control " required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Experiência mais importante ou com maior tempo:<h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="expempresa2" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
+                                    <input name="expperiodo2" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="expfuncao2" placeholder="Funções exercidas" class="form-control " required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Experiência mais importante ou com maior tempo:<h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="expempresa3" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
+                                    <input name="expperiodo3" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="expfuncao3" placeholder="Funções exercidas" class="form-control " required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-2control-label mb-2 bold" for="Nome">Digite aqui a sua formação acadêmica e cursos concluídos ou 
+                                em andamento. É importante destacar somente os principais que estejam ligados a área na qual você está buscando.<h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Formação ou curso: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="cursonome1" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoperiodo1" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoinstituicao1" placeholder="Nome da instituição de ensino" class="form-control  mb-1" required="" type="text">
+                                    <input name="cursoconhecimento1" placeholder="Conhecimentos adquiridos" class="form-control  mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Formação ou curso: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="cursonome2" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoperiodo2" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoinstituicao2" placeholder="Nome da instituição de ensino" class="form-control  mb-1" required="" type="text">
+                                    <input name="cursoconhecimento2" placeholder="Conhecimentos adquiridos" class="form-control  mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Formação ou curso: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="cursonome3" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoperiodo3" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
+                                    <input name="cursoinstituicao3" placeholder="Nome da instituição de ensino" class="form-control  mb-1" required="" type="text">
+                                    <input name="cursoconhecimento3" placeholder="Conhecimentos adquiridos" class="form-control  mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-2control-label mb-2 bold">Digite aqui as suas hardskills e seu nível de domínio de 0% a 100%. Aconselhável 
+                                digitar sempre um número par de skills para não prejudicar o design do seu currículo. É importante destacar somente as skills que você 
+                                tem mais domínio.
+                                <h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 1: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome1" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota1" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 2: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome2" placeholder="Ex.: Java" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota2" placeholder="Ex.: 80%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 3: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome3" placeholder="Ex.: Node.js" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota3" placeholder="Ex.: 85%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 4: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome4" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota4" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 5: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome5" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota5" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Hardskill 6: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="hardnome6" placeholder="Ex.: Javascript" class="form-control mb-1" required="" type="text">
+                                    <input name="hardnota6" placeholder="Ex.: 90%" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-2control-label mb-2 bold">Digite aqui as suas 4 principais softskills e classifique-as entre 0.0 e 5.0. 
+                                É aconselhável incluir competências e aptidões pessoais que se destacarão em um ambiente de trabalho relacionado ao emprego que você procura.
+                                <h11>*</h11>
+                            </label>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Softskill 1: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="softnome1" placeholder="Ex.: Proatividade" class="form-control mb-1" required="" type="text">
+                                    <input name="softnota1" placeholder="Ex.: 4.5" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Softskill 2: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="softnome2" placeholder="Ex.: Comunicação" class="form-control mb-1" required="" type="text">
+                                    <input name="softnota2" placeholder="Ex.: 5" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Softskill 3: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="softnome3" placeholder="Ex.: Concentração" class="form-control mb-1" required="" type="text">
+                                    <input name="softnota3" placeholder="Ex.: 4.25" class="form-control mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2control-label">Softskill 4: <h11>*</h11></label>
+                                <div class="col-md-7 mb-2">
+                                    <input name="softnome4" placeholder="Ex.: Organização" class="form-control mb-1" required="" type="text">
+                                    <input name="softnota4" placeholder="Ex.: 3.85" class="form-control mb-1" required="" type="text">
+                                </div>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="Cadastrar"></label>
+                            <div class="col-md-8 mb-4">
+                                <button id="cadastrar" name="cadastrar" class="btn btn-success px-4 py-2" type="Submit">Cadastrar</button>
+                                <button id="cancelar" name="cancelar" class="btn btn-danger px-4 py-2" type="Reset">Cancelar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

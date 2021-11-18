@@ -3,89 +3,73 @@
     <body class='vsc-initialized bg-dark'>
 
         <div class="signup-form rounded">
-            <form action="cadastrar" method="POST">
+            <form action="/cadastrar" method="POST">
                 <h2 class='text-secondary'>Cadastre-se</h2>
                 <p class="hint-text">Crie a sua conta. É grátis é só leva um minuto! </p>
                 <div class="form-group">
                     <div class="col">
-                        <%if(errors){%>
-                            <input type="text" class="form-control text-dark" name="nome" placeholder="Nome" value="<%=old.nome%>"
-                            required="required">
-                                <%if(errors.nome){%>
-                            <p class="text-danger"><%=errors.nome.msg%></p>
-                            <% } %>
-                        <%} else{%>
                         <input type="text" class="form-control text-dark" name="nome" placeholder="Nome"
-                            required="required">
-                        <% } %>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col">
-                        <%if(errors){%>
-                            <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome" value="<%=old.sobrenome%>"
-                            required="required">
-                            <%if(errors.sobrenome){%>
-                                <p class="text-danger"><%=errors.sobrenome.msg%></p>
+                            value="<%= old.nome %>" required="required">
+                        <%if(errors.nome){%>
+                            <p class="text-danger">
+                                <%=errors.nome.msg%>
+                            </p>
                             <% } %>
-                        <%} else{%>
-                            <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
-                            required="required">
-                        <% } %>
-                        </div>
-                </div>
-                <div class="form-group">
-                    <div class="col">
-                    <%if(errors){%>
-                        <input type="text" class="form-control text-dark" name="celular" placeholder="Celular" value="<%=old.celular%>"
-                        required="required">
-                        <%if(errors.celular){%>
-                            <p class="text-danger"><%=errors.celular.msg%></p>
-                        <% } %>
-                    <%} else{%>
-                        <input type="text" class="form-control text-dark" name="celular" placeholder="Celular"
-                            required="required">
-                    <% } %>
                     </div>
                 </div>
                 <div class="form-group">
-                    <%if(errors){%>
-                        <input type="email" class="form-control text-dark" name="email" placeholder="Email" value="<%=old.email%>"
-                        required="required">
+                    <div class="col">
+                            <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
+                                value="<%=old.sobrenome%>" required="required">
+                            <%if(errors.sobrenome){%>
+                                <p class="text-danger">
+                                    <%=errors.sobrenome.msg%>
+                                </p>
+                                <% } %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col">
+                            <input type="text" class="form-control text-dark" name="celular" placeholder="Celular" id='celular'
+                                value="<%=old.celular%>" required="required">
+                            <%if(errors.celular){%>
+                                <p class="text-danger">
+                                    <%=errors.celular.msg%>
+                                </p>
+                                <% } %>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <input type="email" class="form-control text-dark" name="email" placeholder="Email"
+                            value="<%=old.email%>" required="required">
                         <%if(errors.email){%>
-                            <p class="text-danger"><%=errors.email.msg%></p>
-                        <% } %>
-                    <%} else{%>
-                        <input type="email" class="form-control text-dark" name="email" placeholder="Email" required="required">
-                    <% } %>    
+                            <p class="text-danger">
+                                <%=errors.email.msg%>
+                            </p>
+                            <% } %>
                 </div>
                 <div class="form-group">
-                    <%if(errors){%>
-                        <input type="password" class="form-control text-dark" name="senha" placeholder="Senha" value="<%=old.senha%>"
-                        required="required">
-                        <%if(errors.senha){%>
-                            <p class="text-danger"><%=errors.senha.msg%></p>
-                        <% } %>
-                    <%} else{%>
                         <input type="password" class="form-control text-dark" name="senha" placeholder="Senha"
-                        required="required">
-                    <% } %>      
-                </div>
-                <div class="form-group">
-                    <%if(errors){%>
-                        <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha"
-                        required="required">
+                            value="<%=old.senha%>" required="required">
                         <%if(errors.senha){%>
-                            <p class="text-danger"><%=errors.senha.msg%></p>
-                        <% } %>
-                    <%} else{%>
-                        <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha"
-                        required="required">
-                    <% } %> 
+                            <p class="text-danger">
+                                <%=errors.senha.msg%>
+                            </p>
+                            <% } %>
                 </div>
                 <div class="form-group">
-                    <label class="form-check-label"><input type="checkbox" name="termos" required="required"> Eu aceito os <a class='text-muted'
-                            href="#">Termos de Uso</a> &amp; <a class='text-muted' href="#">Políticas de Privacidade</a></label>
+                        <input type="password" class="form-control text-dark" name="confirmarSenha"
+                            placeholder="Confirme a sua senha" value="<%=old.confirmarSenha%>" required="required">
+                        <%if(errors.confirmarSenha){%>
+                            <p class="text-danger">
+                                <%=errors.confirmarSenha.msg%>
+                            </p>
+                            <% } %>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label"><input type="checkbox" name="termos" required="required"> Eu aceito
+                        os <a class='text-muted' href="#">Termos de Uso</a> &amp; <a class='text-muted'
+                            href="#">Políticas de Privacidade</a></label>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>

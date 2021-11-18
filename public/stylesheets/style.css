@@ -29,6 +29,10 @@ header .botoes {
   width: auto;
 }
 
+a.link-login:hover {
+	color: #2ecc71 !important
+}
+
 .main-index {
 	padding-bottom: 20px !important;
 }
@@ -225,3 +229,4 @@ p.text-muted {
 .cadastrar-curriculo h11 {
 	color: #dc3545;
 }
+

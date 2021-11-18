@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
-const validator = require("../middlewares/validator");
 var usuarioController = require("../controllers/usuarioController");
+var curriculoController = require("../controllers/curriculoController");
 
 router.get("/", usuarioController.getUsuarioIndex);
-router.get("/cadastrar", usuarioController.getCadastrar);
-router.post("/cadastrar", validator.validaCamposCadastoUsuario, usuarioController.postCadastrar);
+router.get("/curriculo", curriculoController.getVerCurriculo);
+router.get("/curriculo/criar", curriculoController.getCriarCurriculo);
 
 module.exports = router;

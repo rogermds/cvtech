@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Zen+Kurenaido&display=swap"
     rel="stylesheet">
-  <title>Currículo - Usuário Teste</title>
+  <title>CVTech</title>
 </head>
 
 <header
@@ -35,12 +35,12 @@
     <%} else{%>
       <div class="dropdown show">
         <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Olá <%=locals.sessao.nome%>
+          Olá, <%=locals.sessao.nome%>!
         </a>
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item text-dark" href="/usuario">Perfil</a>
-          <a class="dropdown-item text-dark" href="/curriculo">Curriculo</a>
+          <a class="dropdown-item text-dark" href="/usuario/curriculo">Curriculo</a>
           <a class="dropdown-item text-dark" href="/logout">Sair</a>
         </div>
       </div>

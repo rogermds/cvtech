@@ -9,7 +9,6 @@ var autenticador = require("./middlewares/autenticador");
 
 var indexRouter = require('./routes/index');
 var usuarioRouter = require("./routes/usuario");
-var curriculoRouter = require("./routes/curriculo");
 
 var app = express();
 
@@ -26,8 +25,7 @@ app.use(session({ secret: "Segredo", resave: true, saveUninitialized: true }));
 app.use(sessao);
 
 app.use('/', indexRouter);
-app.use("/usuario", usuarioRouter);
-app.use("/curriculo", curriculoRouter);
+app.use("/usuario", autenticador, usuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

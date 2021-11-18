@@ -1,7 +1,7 @@
 const config = {
 	username: "root",
 	password: "",
-	database: "projeto-curriculo",
+	database: "cvtech",
 	host: "localhost",
 	dialect: "mysql",
 };

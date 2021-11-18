@@ -1,12 +1,16 @@
+const { validationResult } = require("express-validator");
+
 const usuarioController = {
 	getUsuarioIndex: (req, res) => {
 		res.render("usuario");
 	},
-	getVerCurriculo: (req, res) => {
-		res.render("ver-cuculo");
+	getCadastrar: (req, res, next) => {
+		res.render("cadastrar");
 	},
-	getCriarCurriculo: (req, res) => {
-		res.render("criar-curriculo");
+	postCadastrar: (req, res, next) => {
+		const errors = validationResult(req);
+		console.log(req.body);
+		console.log(errors);
 	},
 };
 

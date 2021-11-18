@@ -3,22 +3,30 @@
     <body class='vsc-initialized bg-dark'>
 
         <div class="signup-form rounded">
-            <form action="/examples/actions/confirmation.php" method="post">
-                <h2 class='text-secondary'> Cadastre-se </h2>
+            <form action="/usuario/cadastrar" method="post">
+                <h2 class='text-secondary'>Cadastre-se</h2>
                 <p class="hint-text">Crie a sua conta. É grátis é só leva um minuto! </p>
                 <div class="form-group">
-                    <div class="col"><input type="text" class="form-control" name="first_name" placeholder="Nome completo"
+                    <div class="col"><input type="text" class="form-control" name="nome" placeholder="Nome"
+                            required="required"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col"><input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome"
+                            required="required"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col"><input type="text" class="form-control" name="celular" placeholder="Celular"
                             required="required"></div>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Senha"
+                    <input type="password" class="form-control" name="senha" placeholder="Senha"
                         required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirme a sua senha"
+                    <input type="password" class="form-control" name="confirmarSenha" placeholder="Confirme a sua senha"
                         required="required">
                 </div>
                 <div class="form-group">

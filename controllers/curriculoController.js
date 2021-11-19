@@ -1,10 +1,9 @@
-const { username } = require("../database/config");
 const {Usuario, Curriculo, sequelize} = require("../models/");
 
 const curriculoController = {
 	getVisualizarCurriculo: async (req, res) => {
 		let {id} = req.params
-		let curriculo = await Curriculo.findByPk(1);
+		let curriculo = await Curriculo.findByPk(id);
 		res.render("ver-curriculo", { curriculo });
 	},
 	getVisualizarTodosCurriculos: async (req, res) => {
@@ -26,7 +25,8 @@ const curriculoController = {
 			...dados,
 		};
 		let novoCurriculo = await Curriculo.create(dadosCurriculo);
-		return res.redirect("/usuario/curriculo/visualizar");
+		let idCurriculo = novoCurriculo.dataValues.id
+		return res.redirect("/usuario/curriculo/visualizar/"+idCurriculo);
 	},
 };
 

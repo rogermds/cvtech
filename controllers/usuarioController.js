@@ -1,9 +1,23 @@
-const {Sequelize, Usuario} = require("../models");
+const {Usuario, Curriculo, sequelize} = require("../models/");
 
 const usuarioController = {
-	getUsuarioIndex: (req, res) => {
-		res.render("usuario");
+	getUsuarioIndex: async (req, res) => {
+		let {id} = req.session.user;
+		console.log("Valor do id: "+id);
+		let curriculos = await Usuario.findAll({
+			where: {
+				id: id
+			},
+			include: {model: Curriculo}
+		}).then(resultado =>{
+			console.log(resultado[0].Curriculos);
+			res.render('usuario',{
+				curriculos: resultado[0].Curriculos
+			})
+		})
+		//res.render("usuario");
 	},
+
 };
 
 module.exports = usuarioController;

@@ -27,14 +27,16 @@ const usuarioController = {
 			editarUsuario.update(novosDados);
 		}
 		else{
-			if(oldAvatar.length > 0){
+			if(oldAvatar.length > 0 && req.file){
 				fs.unlink('../public/images/avatar'+oldAvatar,function(err){
 					if(err) return console.log(err);
 					console.log('Avatar antigo removido');
-			   }); 
+			   }).then(_=>{
+				novosDados.avatar = req.file.filename;
+				editarUsuario.update(novosDados);
+			   }) 
 			}
-			novosDados.avatar = req.file.filename;
-			editarUsuario.update(novosDados);
+			
 		}		
 		res.render("editar-usuario");
 	},

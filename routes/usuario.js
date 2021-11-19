@@ -5,7 +5,7 @@ var curriculoController = require("../controllers/curriculoController");
 
 router.get("/", usuarioController.getUsuarioIndex);
 //router.get("/curriculo/visualizar/", curriculoController.getVisualizarTodosCurriculos);
-router.get("/curriculo/:id", curriculoController.getVisualizarCurriculo);
+router.get("/curriculo//visualizar/:id", curriculoController.getVisualizarCurriculo);
 router.get("/curriculo/criar", curriculoController.getCriarCurriculo);
 
 router.post("/curriculo/criar", curriculoController.postCriarCurriculo);

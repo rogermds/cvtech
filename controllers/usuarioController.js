@@ -18,7 +18,7 @@ const usuarioController = {
 		let editarUsuario = await Usuario.findByPk(id)
 		res.render("editar-usuario", { editarUsuario, errors: [], old: [] });
 	},
-	postEditarUsuario: (req, res) => {
+	postEditarUsuario: async (req, res) => {
 		let { id } = req.session.user;
 		let novosDados = req.body;
 		let editarUsuario = await Usuario.findByPk(id)
@@ -35,9 +35,7 @@ const usuarioController = {
 			}
 			novosDados.avatar = req.file.filename;
 			editarUsuario.update(novosDados);
-		}
-		
-		
+		}		
 		res.render("editar-usuario");
 	},
 };

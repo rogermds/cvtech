@@ -5,7 +5,6 @@ const config = {
 	host: "us-cdbr-east-04.cleardb.com",
 	dialect: "mysql",
 };
-
 // const config = {
 // 	username: "root",
 // 	password: "root",

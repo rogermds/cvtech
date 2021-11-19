@@ -9,25 +9,50 @@
                     <div class="col">
                         <input type="text" class="form-control text-dark" name="nome" placeholder="Nome"
                             value="<%= editarUsuario.nome %>" required="required">
+                            <%if(errors.nome){%>
+                            <p class="text-danger">
+                                <%=errors.nome.msg%>
+                            </p>
+                            <% } %>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col">
                             <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
                                 value="<%=editarUsuario.sobrenome%>" required="required">
-                    </div>
+                                <%if(errors.sobrenome){%>
+                                    <p class="text-danger">
+                                        <%=errors.sobrenome.msg%>
+                                    </p>
+                                    <% } %>
+                            </div>
                 </div>
                 <div class="form-group">
                     <div class="col">
                             <input type="text" class="form-control text-dark" name="celular" placeholder="Celular" id='celular'
                                 value="<%=editarUsuario.celular%>" required="required">
+                                <%if(errors.celular){%>
+                                    <p class="text-danger">
+                                        <%=errors.celular.msg%>
+                                    </p>
+                                    <% } %>
                     </div>
                 </div>
                 <div class="form-group">
                         <input type="password" class="form-control text-dark" name="senha" placeholder="Senha" required="required">
+                        <%if(errors.senha){%>
+                            <p class="text-danger">
+                                <%=errors.senha.msg%>
+                            </p>
+                            <% } %>
                 </div>
                 <div class="form-group">
                         <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha" required="required">
+                        <%if(errors.confirmarSenha){%>
+                            <p class="text-danger">
+                                <%=errors.confirmarSenha.msg%>
+                            </p>
+                            <% } %>
                 </div>
                 <div class="form-group my-4">
                     <div class="custom-file">

@@ -15,8 +15,7 @@ const usuarioController = {
 	getEditarUsuario: async (req, res) => {
 		let { id } = req.session.user;
 		let editarUsuario = await Usuario.findByPk(id)
-		res.render("editar-usuario", { editarUsuario });
-		// res.send(editarUsuario);
+		res.render("editar-usuario", { editarUsuario, errors: [], old: [] });
 	},
 	postEditarUsuario: (req, res) => {
 		res.render("editar-usuario");

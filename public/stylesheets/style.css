@@ -14,19 +14,29 @@ header {
 
 header a {
 	color: white !important;
+	font-size: 20px !important;
 }
 
 header a.logo {
 	font-family: "Fredericka the Great", cursive;
   width: auto;
-	font-size: 40px;
+	font-size: 50px !important;
 	margin-left: 10px;
 	color: white !important;
 }
 
 header .botoes {
 	margin-right: 10px;
-  width: auto;
+  	width: auto;
+	font-size: 16px !important;
+}
+
+header .foto-avatar {
+	width: 65px;
+}
+
+header div.dropdown a {
+	font-size: 16px !important;
 }
 
 a.link-login:hover {

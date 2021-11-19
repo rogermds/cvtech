@@ -12,7 +12,7 @@ const indexController = {
 			created: null,
 			errors: [],
 			old: [],
-			erroSenha: []
+			erroSenha: [],
 		});
 	},
 	getLogout: (req, res, next) => {
@@ -22,45 +22,47 @@ const indexController = {
 	postLogin: async (req, res) => {
 		const errors = validationResult(req);
 		let dadosBody = req.body;
-		console.log(errors)
+		console.log(errors);
 		if (errors.isEmpty()) {
-		let usuarioLogin = await Usuario.findOne({
-			where: {
-				email: dadosBody.email,
-			},
-			attributes: ["email", "senha", "nome", 'sobrenome', "id"],
-		}).then(
-				(resultado) => {
-				if (bcrypt.compareSync(dadosBody.senha, resultado.dataValues.senha)) {
-					let sessaoUsuario = {
-						id: resultado.dataValues.id,
-						nome: resultado.dataValues.nome,
-						sobrenome: resultado.dataValues.sobrenome,
-						email: resultado.dataValues.email,
-					};
-					req.session.user = sessaoUsuario;
-					res.locals.user = sessaoUsuario;
-					return res.redirect("/usuario");
-				} else {
-					return res.render("login", {
-						erroSenha: "Senha incorreta!",
-						old: dadosBody,
-						created: null,
-						errors: [],
-					});
-				}
+			let usuarioLogin = await Usuario.findOne({
+				where: {
+					email: dadosBody.email,
+				},
+				attributes: ["email", "senha", "nome", "sobrenome", "id", "avatar"],
 			})
-			.catch((error) => {
-				console.log(error);
-			})} else {
-				console.log(errors);
-				return res.render("login", {
-					errors: errors.mapped(),
-					old: dadosBody,
-					created: null,
-					erroSenha: [],
+				.then((resultado) => {
+					if (bcrypt.compareSync(dadosBody.senha, resultado.dataValues.senha)) {
+						let sessaoUsuario = {
+							id: resultado.dataValues.id,
+							nome: resultado.dataValues.nome,
+							sobrenome: resultado.dataValues.sobrenome,
+							email: resultado.dataValues.email,
+							avatar: resultado.dataValues.avatar,
+						};
+						req.session.user = sessaoUsuario;
+						res.locals.user = sessaoUsuario;
+						return res.redirect("/usuario");
+					} else {
+						return res.render("login", {
+							erroSenha: "Senha incorreta!",
+							old: dadosBody,
+							created: null,
+							errors: [],
+						});
+					}
+				})
+				.catch((error) => {
+					console.log(error);
 				});
-			}
+		} else {
+			console.log(errors);
+			return res.render("login", {
+				errors: errors.mapped(),
+				old: dadosBody,
+				created: null,
+				erroSenha: [],
+			});
+		}
 	},
 	getCadastrar: (req, res, next) => {
 		res.render("cadastrar-usuario", {
@@ -73,18 +75,17 @@ const indexController = {
 		var dados = req.body;
 		if (errors.isEmpty() && dados.termos) {
 			dados.senha = bcrypt.hashSync(dados.senha, 10);
-			if(!req.file){
+			if (!req.file) {
 				dados.avatar = "";
-			}
-			else{
-				dados.avatar = req.file.filename;;
+			} else {
+				dados.avatar = req.file.filename;
 			}
 			let usuarioCadastrado = await Usuario.create(dados);
 			return res.render("login", {
 				created: true,
 				old: [],
 				errors: [],
-				erroSenha: []
+				erroSenha: [],
 			});
 		} else {
 			console.log(errors);

@@ -9,10 +9,12 @@
         desejam montar um currículo que se destaque, mostrando as suas experiências e habilidades de forma especial. <br> 
         Cadastre-se e monte o seu agora mesmo:
       </p>
+      <% if (!sessao) { %> 
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a href="/login" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Entrar</a>
-        <a href="/usuario/cadastrar" class="btn btn-outline-secondary btn-lg px-4">Cadastrar</a>
+        <a href="/cadastrar" class="btn btn-outline-secondary btn-lg px-4">Cadastrar</a>
       </div>
+      <% } %> 
     </div>
     <div class="ms-0 col-lg-5 p-0 overflow-hidden shadow-lg">
       <img class='rounded border border-dark' src="./images/exemplo.png" alt="" width="720">

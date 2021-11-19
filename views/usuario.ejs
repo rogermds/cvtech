@@ -5,45 +5,52 @@
             <div class="jumbotron">
                 <div class="container text-muted">
                     <h1 class="display-3">Seja bem vindo, <%=locals.sessao.nome%>!</h1>
-                    <p>Esta é a sua página de perfil. Aqui você pode criar, visualizar, editar e excluir os seus currículos cadastrados. <br> 
-                        Caso tenha dificuldade, clique no botão abaixo para visualizar um tutorial em vídeo explicando como a plataforma funciona:</p>
-                    <p><a class="btn btn-primary btn-lg mb-2" href="#" role="button">Tutorial »</a></p>
+                    <p>Esta é a sua página de perfil. Aqui você pode criar, visualizar, editar e excluir os seus
+                        currículos cadastrados. <br>
+                        Caso tenha dificuldade, clique no botão abaixo para visualizar um tutorial em vídeo explicando
+                        como a plataforma funciona:</p>
+                    <p><a class="btn btn-primary btn-lg mb-2 py-1" href="#" role="button">Tutorial »</a></p>
                 </div>
             </div>
+            <hr>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 text-muted">
+                    <div class="col-md-6 text-muted">
                         <h2>Criação</h2>
-                        <p>Crie um novo currículo com as suas informações, experiências, habilidades e mostre ao recrutador que você tem o perfil
-                            perfeito para a vaga pretendida. Um currículo que chame a atenção dos recrutadores aumentam as chances de você ser chamado para uma entrevista! </p>
-                        <p><a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie o seu currículo »</a></p>
+                        <p>Crie um novo currículo com as suas informações, experiências, habilidades e mostre ao
+                            recrutador que você tem o perfil
+                            perfeito para a vaga pretendida. Um currículo que chame a atenção dos recrutadores aumentam
+                            as chances de você ser chamado para uma entrevista! </p>
+                        <p><a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie o seu
+                                currículo »</a></p>
                     </div>
-                    <div class="col-md-4 text-muted">
-                        <h2>Edição</h2>
-                        <p>Edite um currículo já cadastrado em seu perfil. Mantenha as suas informações atualizadas para estar sempre a frente de outros candidatos. 
-                            Um currículo atualizado é imprescindível para que o recrutador saiba desde o início todas as habilidades que você possui. </p>
-                        <p><a class="btn btn-secondary" href="#" role="button">Edite um currículo cadastrado »</a></p>
-                    </div>
-                    <div class="col-md-4 text-muted">
+                    <div class="col-md-6 text-muted">
                         <h2>Doação</h2>
-                        <p> Tudo foi desenvolvido de forma gratuita, pensando naqueles que não conseguem entrevistas por não ter um currículo adequado. 
-                            Para contribuir com o projeto, e me ajudar a desenvolver mais ferramentas como essa, clique no botão abaixo e saiba como: </p>
+                        <p> Tudo foi desenvolvido de forma gratuita, pensando naqueles que não conseguem entrevistas por
+                            não ter um currículo adequado.
+                            Para contribuir com o projeto, e me ajudar a desenvolver mais ferramentas como essa, clique
+                            no botão abaixo e saiba como: </p>
                         <p><a class="btn btn-secondary" href="#" role="button">Contribuir com a página »</a></p>
                     </div>
                 </div>
             </div>
             <hr>
-            <!-- Container para exebir curriculos -->
-            <div class="container">
-                <div class="row">
-                    <%for(curriculo of curriculos){%>
-                    <div class="col-md-4 text-muted">
-                        <h2><%=curriculo.profissao%></h2>
-                        <p><a class="btn btn-secondary" href="/usuario/curriculo/<%=curriculo.id%>" role="button">Visualizar »</a>
-                           <a class="btn btn-danger" href="#" role="button">Editar »</a></p>
+            <div class="container ">
+                    <h2 class='text-muted my-3'>Currículos cadastrados:</h2>
+                <div class="row w-100 d-flex justify-content-around">
+                    <%for (let[i, curriculo ] of curriculos.entries()){%>
+                    <div class="card bg-light" style="width: 18rem;">
+                        <img class="card-img-top mt-3" src="/images/avatar/avatar<%= ++i %>.png" alt="Card image cap">
+                        <div class="card-body d-flex justify-content-center p-0 pt-3">
+                            <h3 class="card-title"><%=curriculo.profissao%></h3>
+                        </div>
+                        <div class="card-body d-flex justify-content-around align-center">
+                            <a class="btn btn-secondary py-2 px-3" href="/usuario/curriculo/<%=curriculo.id%>" role="button">Visualizar »</a>
+                            <a class="btn btn-danger py-2 px-4" href="#" role="button">Editar »</a>
+                        </div>
                     </div>
                     <% } %>
-                </div>        
+                </div>
             </div>
         </main>
 

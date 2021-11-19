@@ -38,6 +38,22 @@
                 <hr>
         
             </div> <!-- /container -->
+
+            <!-- Container para exebir curriculos -->
+            <div class="container">
+                <div class="row">
+                    <%for(curriculo of curriculos){%>
+                    <div class="col-md-4 text-muted">
+                        <h2><%=curriculo.profissao%></h2>
+                        <p><a class="btn btn-secondary" href="/usuario/curriculo/<%=curriculo.id%>" role="button">Visualizar »</a>
+                           <a class="btn btn-danger" href="#" role="button">Editar »</a></p>
+                    </div>
+                    <% } %>
+                </div>
+        
+                <hr>
+        
+            </div> <!-- /container -->
         
         </main>
 

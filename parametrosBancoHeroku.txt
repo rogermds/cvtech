@@ -1,0 +1,8 @@
+mysql://bb5d8bdfa72946:9b32922d@us-cdbr-east-04.cleardb.com/heroku_083b6d311868c40?reconnect=true
+
+username: bb5d8bdfa72946
+password: 9b32922d
+hotname: us-cdbr-east-04.cleardb.com
+database: heroku_083b6d311868c40
+
+heroku remote add origin main https://git.heroku.com/cv-tech.git

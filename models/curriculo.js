@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const Usuario = require('./Usuario');
 module.exports = (sequelize, DataTypes) => {
   class Curriculo extends Model {
     /**
@@ -11,14 +12,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Curriculo.belongsTo(models.Usuario,{
-        foreignKey:"idUsuario",
-        as: "curriculo"
+        foreignKey:"id"
       })
     }
   };
   Curriculo.init(
 		{
-			idUsuario: DataTypes.INTEGER.UNSIGNED,
+			idUsuario:{
+				type: DataTypes.INTEGER.UNSIGNED,
+				references: 'Usuario'
+			},
 			profissao: DataTypes.STRING,
 			github: DataTypes.STRING,
 			linkedin: DataTypes.STRING,

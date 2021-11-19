@@ -26,7 +26,7 @@ const curriculoController = {
 		};
 		let novoCurriculo = await Curriculo.create(dadosCurriculo);
 		let idCurriculo = novoCurriculo.dataValues.id
-		return res.redirect("/usuario/curriculo/visualizar/"+idCurriculo);
+		return res.redirect("/usuario/curriculo/"+idCurriculo);
 	},
 };
 

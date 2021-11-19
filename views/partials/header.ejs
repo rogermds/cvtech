@@ -31,16 +31,16 @@
 
   <div class="botoes col-md-3 me-3 text-end">
     <%if(!sessao){%>
-      <a href="/login"><button type="button" class="btn btn-primary">Entrar</button></a>
+      <a href="/login"><button type="button" class="btn btn-primary me-3">Entrar</button></a>
     <%} else{%>
       <div class="dropdown show d-flex justify-content-around align-items-center">
         <%  if(sessao.avatar) { %>
         <div>
-          <img src="/images/avatar/<%=sessao.avatar%>" alt="">
+          <a href="/usuario"><img class='foto-avatar rounded-circle me-4' src="/images/avatar/<%=sessao.avatar%>" alt=""></a>
         </div>
         <%  } else { %>
         <div>
-          <img class='foto-avatar rounded-circle me-4' src="/images/curriculo/fotoProfissional.jpg" alt="">
+          <a href="/usuario"><img class='foto-avatar rounded-circle me-4' src="/images/curriculo/fotoProfissional.jpg" alt=""></a>
         </div>
         <% } %>
         <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,6 +48,7 @@
         </a>
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item text-dark" href="/usuario">Perfil</a>
           <a class="dropdown-item text-dark" href="/usuario/editar">Editar Perfil</a>
           <a class="dropdown-item text-dark" href="/logout">Sair</a>
         </div>

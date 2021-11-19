@@ -73,6 +73,12 @@ const indexController = {
 		var dados = req.body;
 		if (errors.isEmpty() && dados.termos) {
 			dados.senha = bcrypt.hashSync(dados.senha, 10);
+			if(!req.file){
+				dados.avatar = "";
+			}
+			else{
+				dados.avatar = req.file.filename;;
+			}
 			let usuarioCadastrado = await Usuario.create(dados);
 			return res.render("login", {
 				created: true,

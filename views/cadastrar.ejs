@@ -3,7 +3,7 @@
     <body class='vsc-initialized bg-dark'>
 
         <div class="signup-form rounded">
-            <form action="/cadastrar" method="POST">
+            <form action="/cadastrar" enctype="multipart/form-data" method="POST">
                 <h2 class='text-secondary'>Cadastre-se</h2>
                 <p class="hint-text">Crie a sua conta. É grátis é só leva um minuto! </p>
                 <div class="form-group">
@@ -69,7 +69,7 @@
                 <div class="form-group my-4">
                     <div class="custom-file">
                         <label class="custom-file-label h5 mb-1" for="inputGroupFile03">Escolha uma foto de perfil:</label> <br>
-                        <input type="file" class="custom-file-input" id="inputGroupFile02">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02" name="avatar" accept=".jpg, .jpeg, .png, .webp">
                     </div>
                 </div>
                 <div class="form-group">

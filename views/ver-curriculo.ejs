@@ -22,7 +22,11 @@
   <main>
     <aside>
       <div class="sidebar">
-        <img class="profile-picture" src="/images/curriculo/fotoProfissional.jpg" alt="<%= curriculo.nome %>" />
+        <%if(curriculo.avatar.length == 0){%>
+          <img class="profile-picture" src="/images/avatar/<%=curriculo.avatar%>" alt="<%= curriculo.nome %>" />
+        <%} else { %>
+          <img class="profile-picture" src="/images/curriculo/fotoProfissional.jpg" alt="<%= curriculo.nome %>" />
+        <% } %>
         <h1 class="title-name"><%= sessao.nome + ' ' + sessao.sobrenome %></h1>
         <h3 class="subtitle-role"><%= curriculo.profissao %></h3>
         <div class="social-links">

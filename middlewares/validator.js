@@ -1,5 +1,6 @@
 const { body, check} = require("express-validator");
 const { Sequelize, Usuario } = require("../models");
+const bcrypt = require("bcryptjs");
 
 const validaCamposCadastoUsuario = [
     check('nome').trim().notEmpty().withMessage("Digite seu nome corretamente!").bail().isLength({min:3}).withMessage("Nome muito curto!"),
@@ -50,11 +51,17 @@ const validaCamposLogin = [
                         where: {
                             email: emailBody,
                         }});
-                    if (procuraUsuario.senha !== senhaBody) {
+                        if(bcrypt.compareSync(senhaBody, procuraUsuario.senha)){
+                            return senhaBody;
+                        }
+                        else{
+                            throw new Error("Senha incorreta!");
+                        }
+                        /*if (procuraUsuario.senha !== senhaBody) {
                         throw new Error("Senha incorreta!");
                         } else {
                             return senhaBody;
-                        }
+                        }*/
                 })
 
 ]

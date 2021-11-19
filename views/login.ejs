@@ -1,9 +1,8 @@
 <%- include('./partials/header.ejs') %>
 
-  <body class='bg-dark'>
-<div class="container mt-5">
-    <div class="row col-md-6 card">
-      <form class="box rounded" action='/login' method='POST'>
+  <body class='bg-dark vsc-initialized'>
+    <div class='d-flex justify-content-center align-items-center mt-5'>
+    <form class="box rounded mt-4" action='/login' method='POST'>
         <%if(created){%>
           <p class="text-success"> Usuário cadastrado com sucesso! </p>
         <% } %>
@@ -24,6 +23,5 @@
         <a class="forgot text-muted text-decoration-none" href="/cadastrar">Não tem cadastro? <a class='link-login text-white text-decoration-none' href="/cadastrar">Cadastre-se aqui!</a></a>
         <input type="submit" value="Login">
       </form>
-    </div>
-</div>
+      </div>
     <%- include('./partials/footer.ejs') %>

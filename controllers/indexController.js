@@ -63,7 +63,7 @@ const indexController = {
 			}
 	},
 	getCadastrar: (req, res, next) => {
-		res.render("cadastrar", {
+		res.render("cadastrar-usuario", {
 			errors: [],
 			old: [],
 		});
@@ -88,7 +88,7 @@ const indexController = {
 			});
 		} else {
 			console.log(errors);
-			return res.render("cadastrar", {
+			return res.render("cadastrar-usuario", {
 				errors: errors.mapped(),
 				old: dados,
 			});

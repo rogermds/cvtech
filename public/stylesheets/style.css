@@ -153,6 +153,17 @@ p.text-muted {
 	z-index: 2;
 }
 
+.signup-form .editar-perfil:before,
+.signup-form .editar-perfil:after {
+	content: "";
+	height: 2px;
+	width: 17.5%;
+	background: #d4d4d4;
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+}
+
 .signup-form h2:before {
 	left: 0;
 }

@@ -1,0 +1,44 @@
+<%- include('./partials/header.ejs') %>
+
+    <body class='vsc-initialized bg-dark'>
+
+        <div class="signup-form rounded mb-3 pb-0">
+            <form action="/usuario/editar" method="POST">
+                <h2 class='editar-perfil text-secondary'>Edite o seu perfil: </h2>
+                <div class="form-group">
+                    <div class="col">
+                        <input type="text" class="form-control text-dark" name="nome" placeholder="Nome"
+                            value="<%= editarUsuario.nome %>" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col">
+                            <input type="text" class="form-control text-dark" name="sobrenome" placeholder="Sobrenome"
+                                value="<%=editarUsuario.sobrenome%>" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col">
+                            <input type="text" class="form-control text-dark" name="celular" placeholder="Celular" id='celular'
+                                value="<%=editarUsuario.celular%>" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <input type="password" class="form-control text-dark" name="senha" placeholder="Senha" required="required">
+                </div>
+                <div class="form-group">
+                        <input type="password" class="form-control text-dark" name="confirmarSenha" placeholder="Confirme a sua senha" required="required">
+                </div>
+                <div class="form-group my-4">
+                    <div class="custom-file">
+                        <label class="custom-file-label h5 mb-1" for="inputGroupFile03">Escolha uma foto de perfil:</label> <br>
+                        <input type="file" class="custom-file-input" id="inputGroupFile02">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Editar</button>
+                </div>
+            </form>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>

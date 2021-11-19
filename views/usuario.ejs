@@ -2,8 +2,6 @@
 
     <body class='bg-dark'>
         <main role="main">
-        
-            <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container text-muted">
                     <h1 class="display-3">Seja bem vindo, <%=locals.sessao.nome%>!</h1>
@@ -12,7 +10,6 @@
                     <p><a class="btn btn-primary btn-lg mb-2" href="#" role="button">Tutorial »</a></p>
                 </div>
             </div>
-        
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-muted">
@@ -34,11 +31,8 @@
                         <p><a class="btn btn-secondary" href="#" role="button">Contribuir com a página »</a></p>
                     </div>
                 </div>
-        
-                <hr>
-        
-            </div> <!-- /container -->
-
+            </div>
+            <hr>
             <!-- Container para exebir curriculos -->
             <div class="container">
                 <div class="row">
@@ -49,12 +43,8 @@
                            <a class="btn btn-danger" href="#" role="button">Editar »</a></p>
                     </div>
                     <% } %>
-                </div>
-        
-                <hr>
-        
-            </div> <!-- /container -->
-        
+                </div>        
+            </div>
         </main>
 
         <%- include('./partials/footer.ejs') %>

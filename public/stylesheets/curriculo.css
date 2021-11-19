@@ -1,12 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
-  outline: 0;
   box-sizing: border-box;
 }
 
 img {
   max-width: 100%;
+}
+
+p {
+  margin: 7.5px 0;
 }
 
 body {
@@ -50,7 +51,11 @@ aside {
   color: #284b63;
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  margin: 8px 0;
+  margin: 32px 0 0 0;
+}
+
+.title-name span {
+  font-weight: 400;
 }
 
 .subtitle-role {
@@ -59,18 +64,17 @@ aside {
   color: #e9ebec;
   font-size: 14px;
   font-weight: 400;
-  margin: 0;
-  padding: 6px 12px;
+  margin: 15px 0;
+  padding: 4px 10px;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .social-links {
   display: flex;
-  justify-content: space-evenly;
   font-size: 20px;
-  margin: 20px 0;
-  width: 160px;
+  justify-content: space-around;
+  margin: 0 0 12px 0;
+  width: 80px;
 }
 
 .social-links a {
@@ -83,7 +87,7 @@ aside {
 
 .personal-data {
   list-style-type: none;
-  margin: 0;
+  margin: 20px 0 0 0;
   padding: 0;
 }
 
@@ -121,7 +125,7 @@ section {
 }
 
 article {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .article-title-wrapper {
@@ -148,12 +152,13 @@ article {
 
 .timeline {
   list-style: none;
+  margin: 20px 0;
   padding: 0;
 }
 
 .timeline li {
   margin: 0;
-  padding: 2px 0 5px 20px;
+  padding: 2px 0 40px 20px;
   position: relative;
 }
 
@@ -200,11 +205,7 @@ article {
   margin: 12px 0 4px;
 }
 
-.timeline li:first-child {
-  padding-bottom: 35px ;
-}
-
-.timeline-text{
+.timeline-text {
   font-size: 14px;
   margin: 0;
 }
@@ -245,7 +246,6 @@ article {
   display: flex;
   justify-content: space-between;
   padding: 0 8px;
-  margin-bottom: 30px;
 }
 
 .soft-skill {

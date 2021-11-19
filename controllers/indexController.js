@@ -12,6 +12,7 @@ const indexController = {
 			created: null,
 			errors: [],
 			old: [],
+			erroSenha: []
 		});
 	},
 	getLogout: (req, res, next) => {
@@ -21,36 +22,45 @@ const indexController = {
 	postLogin: async (req, res) => {
 		const errors = validationResult(req);
 		let dadosBody = req.body;
+		console.log(errors)
+		if (errors.isEmpty()) {
 		let usuarioLogin = await Usuario.findOne({
 			where: {
 				email: dadosBody.email,
 			},
-			attributes: ["email", "senha", "nome", "id"],
-		})
-			.then((resultado) => {
-				if (errors.isEmpty()) {
+			attributes: ["email", "senha", "nome", 'sobrenome', "id"],
+		}).then(
+				(resultado) => {
 				if (bcrypt.compareSync(dadosBody.senha, resultado.dataValues.senha)) {
 					let sessaoUsuario = {
 						id: resultado.dataValues.id,
 						nome: resultado.dataValues.nome,
+						sobrenome: resultado.dataValues.sobrenome,
 						email: resultado.dataValues.email,
 					};
 					req.session.user = sessaoUsuario;
 					res.locals.user = sessaoUsuario;
 					return res.redirect("/usuario");
-					}
 				} else {
-					console.log(errors);
-					return res.render("cadastrar", {
-						errors: errors.mapped(),
-						old: req.body,
+					return res.render("login", {
+						erroSenha: "Senha incorreta!",
+						old: dadosBody,
+						created: null,
+						errors: [],
 					});
 				}
 			})
-			.catch(
-				console.log('catch');
-				// res.redirect('/login')
-			);
+			.catch((error) => {
+				console.log(error);
+			})} else {
+				console.log(errors);
+				return res.render("login", {
+					errors: errors.mapped(),
+					old: dadosBody,
+					created: null,
+					erroSenha: [],
+				});
+			}
 	},
 	getCadastrar: (req, res, next) => {
 		res.render("cadastrar", {
@@ -66,12 +76,15 @@ const indexController = {
 			let usuarioCadastrado = await Usuario.create(dados);
 			return res.render("login", {
 				created: true,
+				old: [],
+				errors: [],
+				erroSenha: []
 			});
 		} else {
 			console.log(errors);
 			return res.render("cadastrar", {
 				errors: errors.mapped(),
-				old: req.body,
+				old: dados,
 			});
 		}
 	},

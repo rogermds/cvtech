@@ -15,39 +15,39 @@
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/e258bd240c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/curriculo.css">
-  <title>Currículo - Rogério Martins</title>
+  <title>Currículo - <%= sessao.nome + ' ' + sessao.sobrenome %></title>
 </head>
 
 <body>
   <main>
     <aside>
       <div class="sidebar">
-        <img class="profile-picture" src="/images/curriculo/fotoProfissional.jpg" alt="Rogério Martins" />
-        <h1 class="title-name">Rogério Martins</h1>
-        <h3 class="subtitle-role">Desenvolvedor/QA</h3>
+        <img class="profile-picture" src="/images/curriculo/fotoProfissional.jpg" alt="<%= curriculo.nome %>" />
+        <h1 class="title-name"><%= sessao.nome + ' ' + sessao.sobrenome %></h1>
+        <h3 class="subtitle-role"><%= curriculo.profissao %></h3>
         <div class="social-links">
-          <a href="https://github.com/rogermds" target="_blank">
+          <a href="https://github.com/<%= curriculo.github %>" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/theleoad/" target="_blank">
+          <a href="https://www.linkedin.com/in/<%= curriculo.linkedin %>/" target="_blank">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </div>
         <ul class="personal-data">
           <li>
             <i class="fas fa-map-marker-alt"></i>
-            <span>São Paulo - SP | Brasil</span>
+            <span><%= curriculo.cidade %> - <%= curriculo.uf %> | <%= curriculo.pais %></span>
           </li>
           <li>
             <i class="fas fa-envelope"></i>
-            <a href="mailto:rmartins.economia@gmail.com">rmartins.economia@gmail.com</a>
+            <a href="mailto:<%= curriculo.email %>"><%= curriculo.email %></a>
           </li>
           <li>
             <i class="fas fa-mobile-alt"></i>
-            <a href="tel:+5511961615456">+55 11 96161 5456</a>
+            <a href="tel:+55<%= curriculo.celular %>">+55 <%= curriculo.celular %></a>
           </li>
         </ul>
-        <a class="download-button" href="https://wa.me/+5511961615456" target="_blank">
+        <a class="download-button" href="https://wa.me/+55<%= curriculo.whatsapp %>" target="_blank">
           <i class="fab fa-whatsapp"></i>
           <span>Fale comigo</span>
         </a>
@@ -57,18 +57,11 @@
           <article>
             <div class="article-title-wrapper">
               <i class="fas fa-user-astronaut"></i>
-              <h2 class="article-title">Sobre o Rogério</h2>
+              <h2 class="article-title">Sobre mim</h2>
             </div>
-            <p>Profissional buscando oportunidade na área de Desenvolvimento ou Testes. <br>
-              Meu primeiro contato com programação foi automatizando planilhas em Excel. <br>
-              Sou autodidata e estou disposto a aprender outros conhecimentos se necessário. </p>
-            <p>As minhas principais Hard Skills como desenvolvedor são: <br>
-              → Criação de CRUDs com Node.js, Express.js e MySQL, criação e consumo de APIs, requisições HTTP utilizando
-              Postman/Insomnia, JSON, HTML5, CSS3, JavaScript, versionamento com Git e GitHub, criação de wireframes com o
-              Figma,
-              metodologia ágil SCRUM.</p>
-            <p>As minhas principais Hard Skills como QA são: <br>
-              → Eclipse/Intellij, Java, Selenium, Cucumber, Junit, pirâmide de testes, Gherkin e BDD.</p>
+            <p><%= curriculo.resumo1 %></p>
+            <p><%= curriculo.resumo2 %></p>
+            <p><%= curriculo.resumo3 %></p>
           </article>
           <article>
             <div class="article-title-wrapper">
@@ -77,20 +70,22 @@
             </div>
             <ul class="timeline">
               <li>
-                <h4 class="timeline-title">Consultor de Vendas</h4>
-                <h5 class="timeline-time">01/2021 - 09/2021</h5>
-                <h6 class="timeline-place">Aport Consultoria</h6>
-                <p class="timeline-text">Consultor de vendas internas; atendimento receptivo ao cliente; qualidade e
-                  agilidade no atendimento (via telefone, e-mail e WhatsApp); automatização de planilhas; resolução de problemas; prospecção
-                  utilizando base de dados e planilhas avançadas em Excel.</p>
+                <h4 class="timeline-title"><%= curriculo.expcargo1 %></h4>
+                <h5 class="timeline-time"><%= curriculo.expperiodo1 %></h5>
+                <h6 class="timeline-place"><%= curriculo.expempresa1 %></h6>
+                <p class="timeline-text"><%= curriculo.expfuncao1 %></p>
               </li>
               <li>
-                <h4 class="timeline-title">Jovem Aprendiz & Estagiário no Planejamento Econômico</h4>
-                <h5 class="timeline-time">2016 - 2018</h5>
-                <h6 class="timeline-place">Rádio e Televisão Record S/A</h6>
-                <p class="timeline-text">Análise de entradas e saídas de estoque, centros de custos e apontamentos; extração de relatórios no SAP; análise 
-                  entre valores orçados e realizados; manutenção do organograma e cronograma da empresa; auxiliar da coordenação e da direção; extração de relatórios para 
-                  análise utilizando banco de dados; resiliência e trabalho com prazos curtos.</p>
+                <h4 class="timeline-title"><%= curriculo.expcargo2 %></h4>
+                <h5 class="timeline-time"><%= curriculo.expperiodo2 %></h5>
+                <h6 class="timeline-place"><%= curriculo.expempresa2 %></h6>
+                <p class="timeline-text"><%= curriculo.expfuncao2 %></p>
+              </li>
+              <li>
+                <h4 class="timeline-title"><%= curriculo.expcargo3 %></h4>
+                <h5 class="timeline-time"><%= curriculo.expperiodo3 %></h5>
+                <h6 class="timeline-place"><%= curriculo.expempresa3 %></h6>
+                <p class="timeline-text"><%= curriculo.expfuncao3 %></p>
               </li>
             </ul>
           </article>
@@ -101,16 +96,22 @@
             </div>
             <ul class="timeline">
               <li>
-                <h4 class="timeline-title">Desenvolvimento Web Full Stack</h4>
-                <h5 class="timeline-time">2021 - 2022</h5>
-                <h6 class="timeline-place">Digital House > Coding School</h6>
-                <p class="timeline-text">Curso em andamento voltado para o Desenvolvimento Web em Node.js, Express, MySQL e React.js</p>
+                <h4 class="timeline-title"><%= curriculo.cursonome1 %></h4>
+                <h5 class="timeline-time"><%= curriculo.cursoperiodo1 %></h5>
+                <h6 class="timeline-place"><%= curriculo.cursoinstituicao1 %></h6>
+                <p class="timeline-text"><%= curriculo.cursoconhecimento1 %></p>
               </li>
               <li>
-                <h4 class="timeline-title">Ciências Econômicas</h4>
-                <h5 class="timeline-time">2016-2018</h5>
-                <h6 class="timeline-place">FECAP - Fundação Escola de Comércio Álvares Penteado</h6>
-                <p class="timeline-text">Graduação trancada.</p>
+                <h4 class="timeline-title"><%= curriculo.cursonome2 %></h4>
+                <h5 class="timeline-time"><%= curriculo.cursoperiodo2 %></h5>
+                <h6 class="timeline-place"><%= curriculo.cursoinstituicao2 %></h6>
+                <p class="timeline-text"><%= curriculo.cursoconhecimento2 %></p>
+              </li>
+              <li>
+                <h4 class="timeline-title"><%= curriculo.cursonome3 %></h4>
+                <h5 class="timeline-time"><%= curriculo.cursoperiodo3 %></h5>
+                <h6 class="timeline-place"><%= curriculo.cursoinstituicao3 %></h6>
+                <p class="timeline-text"><%= curriculo.cursoconhecimento3 %></p>
               </li>
             </ul>
           </article>
@@ -121,88 +122,70 @@
             </div>
             <div class="skills-container">
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 85%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota1 %>;">
                   <div class="progress-text">
-                    <span>Node.js</span>
-                    <span>85%</span>
+                    <span><%= curriculo.hardnome1 %></span>
+                    <span><%= curriculo.hardnota1 %></span>
                   </div>
                 </div>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 85%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota2 %>;">
                   <div class="progress-text">
-                    <span>Express.js</span>
-                    <span>85%</span>
+                    <span><%= curriculo.hardnome2 %></span>
+                    <span><%= curriculo.hardnota2 %></span>
                   </div>
                 </div>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 85%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota3 %>;">
                   <div class="progress-text">
-                    <span>Javascript</span>
-                    <span>85%</span>
+                    <span><%= curriculo.hardnome3 %></span>
+                    <span><%= curriculo.hardnota3 %></span>
                   </div>
                 </div>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 85%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota4 %>;">
                   <div class="progress-text">
-                    <span>HTML</span>
-                    <span>85%</span>
+                    <span><%= curriculo.hardnome4 %></span>
+                    <span><%= curriculo.hardnota4 %></span>
                   </div>
                 </div>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 80%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota5 %>;">
                   <div class="progress-text">
-                    <span>CSS</span>
-                    <span>80%</span>
+                    <span><%= curriculo.hardnome5 %></span>
+                    <span><%= curriculo.hardnota5 %></span>
                   </div>
                 </div>
               </div>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 70%;">
+                <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota6 %>;">
                   <div class="progress-text">
-                    <span>MySQL</span>
-                    <span>70%</span>
+                    <span><%= curriculo.hardnome6 %></span>
+                    <span><%= curriculo.hardnota6 %></span>
                   </div>
                 </div>
               </div>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 65%;">
-                  <div class="progress-text">
-                    <span>Java</span>
-                    <span>65%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 65%;">
-                  <div class="progress-text">
-                    <span>Selenium</span>
-                    <span>65%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
             </div>
             <div class="soft-skills">
               <div class="soft-skill">
-                <div class="soft-skill-rating" style="--rating: 5;"></div>
-                <h4 class="soft-skill-label">Proatividade</h4>
+                <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota1 %>;"></div>
+                <h4 class="soft-skill-label"><%= curriculo.softnome1 %></h4>
               </div>
               <div class="soft-skill">
-                <div class="soft-skill-rating" style="--rating: 4;"></div>
-                <h4 class="soft-skill-label">Comunicação</h4>
+                <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota2 %>;"></div>
+                <h4 class="soft-skill-label"><%= curriculo.softnome2 %></h4>
               </div>
               <div class="soft-skill">
-                <div class="soft-skill-rating" style="--rating: 3.75;"></div>
-                <h4 class="soft-skill-label">Concentração</h4>
+                <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota3 %>;"></div>
+                <h4 class="soft-skill-label"><%= curriculo.softnome3 %></h4>
               </div>
               <div class="soft-skill">
-                <div class="soft-skill-rating" style="--rating: 3.5;"></div>
-                <h4 class="soft-skill-label">Organização</h4>
+                <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota4 %>;"></div>
+                <h4 class="soft-skill-label"><%= curriculo.softnome4 %></h4>
               </div>
             </div>
           </article>

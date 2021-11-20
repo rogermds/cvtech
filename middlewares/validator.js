@@ -1,7 +1,7 @@
 const { body, check} = require("express-validator");
 const { Sequelize, Usuario } = require("../models");
 
-const validaCamposCadastoUsuario = [
+const validaCamposCadastroUsuario = [
     check('nome').trim().notEmpty().withMessage("Digite seu nome corretamente!").bail().isLength({min:3}).withMessage("Nome muito curto!"),
     check('sobrenome').trim().notEmpty().withMessage("Digite seu sobrenome corretamente!").bail().isLength({min:3}).withMessage("Sobrenome muito curto!"),
     check('celular').trim().notEmpty().withMessage("Digite seu celular corretamente!").bail().isLength({min:10}).withMessage("Numero muito curto!"),
@@ -63,7 +63,7 @@ const validaCamposEditarUsuario = [
 ]
 
 module.exports = {
-	validaCamposCadastoUsuario,
+	validaCamposCadastroUsuario,
 	validaCamposLogin,
 	validaCamposEditarUsuario,
 };

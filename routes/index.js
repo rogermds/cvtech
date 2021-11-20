@@ -11,8 +11,8 @@ router.get("/login", indexController.getLogin);
 router.get("/logout", indexController.getLogout);
 router.get("/cadastrar", indexController.getCadastrar);
 
-router.post("/login", indexController.postLogin);
-router.post("/cadastrar", uploadAvatar.single("avatar"), validator.validaCamposCadastoUsuario, indexController.postCadastrar);
+router.post("/login", validator.validaCamposLogin, indexController.postLogin);
+router.post("/cadastrar", uploadAvatar.single("avatar"), validator.validaCamposCadastroUsuario, indexController.postCadastrar);
 
 
 module.exports = router;

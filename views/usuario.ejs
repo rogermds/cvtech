@@ -36,10 +36,12 @@
             </div>
             <hr>
             <div class="container ">
-                    <h2 class='text-muted my-3'>Currículos cadastrados:</h2>
+                <h2 class='text-muted my-3'>Currículos cadastrados:</h2>
+                <% if(curriculos == 0) { %>
                     <div class='mb-4'>
                         <p class='ms-4 text-muted'>Nenhum currículo cadastrado. <a class='link-login text-white text-decoration-none' href="/usuario/curriculo/criar">Crie seu primeiro currículo aqui!</a></p>
                     </div>
+                <% } %> 
                 <div class="row w-100 d-flex justify-content-around">
                     <%for (let[i, curriculo ] of curriculos.entries()){%>
                     <div class="card bg-light d-flex" style="width: 18rem;">

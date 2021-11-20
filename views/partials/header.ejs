@@ -16,7 +16,7 @@
 </head>
 
 <header
-  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-3 border-bottom">
+  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-0 mb-3 border-bottom">
   <a href="/" class="logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
     CVTech
   </a>
@@ -32,15 +32,15 @@
   <div class="botoes col-md-3 me-3 text-end">
     <%if(!sessao){%>
       <a href="/login"><button type="button" class="btn btn-primary me-3">Entrar</button></a>
-    <%} else{%>
-      <div class="dropdown show d-flex justify-content-around align-items-center">
+    <%} else {%>
+      <div class="div-menu-header dropdown show d-flex justify-content-around align-items-center">
         <%  if(sessao.avatar) { %>
-        <div>
-          <a href="/usuario"><img class='foto-avatar rounded-circle me-4' src="/images/avatar/<%=sessao.avatar%>" alt=""></a>
+        <div class='div-foto-avatar'>
+          <a href="/usuario"><img class='foto-avatar me-4 py-2' src="/images/avatar/<%=sessao.avatar%>" alt=""></a>
         </div>
         <%  } else { %>
         <div>
-          <a href="/usuario"><img class='foto-avatar rounded-circle me-4' src="/images/curriculo/fotoProfissional.jpg" alt=""></a>
+          <a href="/usuario"><img class='rounded-circle me-4' src="/images/curriculo/fotoProfissional.jpg" alt=""></a>
         </div>
         <% } %>
         <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

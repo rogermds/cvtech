@@ -1,0 +1,382 @@
+<%- include('./partials/header.ejs') %>
+
+    <body class='vsc-initialized bg-dark'>
+        <div class="cadastrar-curriculo container text-muted">
+            <div class="row">
+                <h1>Cadastre seu currículo</h1>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Preencha as suas informações no formulário ao lado e cadastre seu currículo ao final da página. <br><br>
+                    <b class='text-warning'>Adicione os campos conforme solicitado para ter a melhor formatação.</b></div>
+                <div class="col-md-9">
+                    <form action="/usuario/curriculo/criar" method="POST">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-11 control-label">
+                                    <p class="help-block text-danger">
+                                        <h11>*</h11> Campos obrigatórios
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="profissao">Profissão: <h11>*</h11></label>
+                                <div class="col-md-5">
+                                    <input name="profissao" value='<%= curriculo.profissao %>' placeholder="Ex.: Desenvolvedor Node.js"
+                                        class="form-control text-dark" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="github">GitHub: <h11>*</h11></label>
+                                <div class="col-md-3">
+                                    <input name="github" placeholder="Ex.: user13" value='<%= curriculo.github %>' class="form-control text-dark"
+                                        required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="linkedin">LinkedIn: <h11>*</h11></label>
+                                <div class="col-md-3">
+                                    <input name="linkedin" placeholder="Ex.: user13" value='<%= curriculo.linkedin %>' class="form-control text-dark"
+                                        required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group w-50">
+                                <label class="control-label" for="uf">Selecione seu Estado novamente:<h11> *</h11></label><br>
+                                <select id="uf" name="uf" class='form-control text-dark w-50'>
+                                    <option disabled selected>Selecione UF</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                    <option value="EX">Estrangeiro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="cidade">Cidade: <h11>*</h11></label>
+                                <div class="col-md-3">
+                                    <input name="cidade" placeholder="Ex.: São Paulo" value='<%= curriculo.cidade %>' class="form-control text-dark"
+                                        required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="pais">País: <h11>*</h11></label>
+                                <div class="col-md-3">
+                                    <input name="pais" placeholder="Ex.: Brasil" value='<%= curriculo.pais %>' class="form-control text-dark"
+                                        required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="celular">Celular para contato: <h11>*</h11>
+                                    </label>
+                                <div class="col-md-3">
+                                    <input name="celular" placeholder="Ex.: 11 96161-5456" value='<%= curriculo.celular %>' class="form-control text-dark" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="whatsapp">Whatsapp: <h11>*</h11></label>
+                                <div class="col-md-3">
+                                    <input name="whatsapp" placeholder="Ex.: 11961615456" value='<%= curriculo.whatsapp %>'class="form-control text-dark"
+                                        required="" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-10 control-label mb-2 bold">Digite aqui um breve resumo sobre você,
+                                suas softskills e suas hardskills em no máximo
+                                3 parágrafos. Aconselhável no mínimo 2 parágrafos preenchidos. <h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label">Primeiro parágrafo: <h11>*</h11></label>
+                                <div class="primeiro-paragrafo col-md-8">
+                                    <input type="text" class='d-none' value='<%= curriculo.resumo1 %>' id='pegarResumo1'>
+                                    <textarea name="resumo1"
+                                        placeholder='Profissional buscando oportunidade na área de Desenvolvimento ou Testes...'
+                                        class="form-control text-dark h-100" id="resumo1" rows="3" required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label">Segundo parágrafo: <h11>*</h11></label>
+                                <div class="primeiro-paragrafo col-md-8">
+                                    <input type="text" class='d-none' value='<%= curriculo.resumo2 %>' id='pegarResumo2'>
+                                    <textarea name="resumo2" placeholder='Meu primeiro contato com programação foi ...'
+                                        value='<%= curriculo.resumo2 %>' class="form-control text-dark h-100" id="resumo2" rows="3"
+                                        required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label" for="Nome">Terceiro parágrafo:</label>
+                                <div class="primeiro-paragrafo col-md-8">
+                                    <input type="text" class='d-none' value='<%= curriculo.resumo3 %>' id='pegarResumo3'>
+                                    <textarea name="resumo3"
+                                        placeholder='As minhas principais Hard Skills como desenvolvedor são...'
+                                        value='<%= curriculo.resumo3 %>' class="form-control text-dark h-100" id="resumo3" rows="3"
+                                        required=""></textarea>
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-10 control-label mb-2 bold" for="Nome">Digite aqui as suas experiências
+                                profissionais, mesmo que em outras
+                                áres. É importante destacar a experiência mais recente e as 2 experiências mais
+                                importantes ou as que você permaneceu por
+                                mais tempo.<h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label">Experiência mais recente: <h11>*</h11></label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="expcargo1" placeholder="Cargo. Ex.: Desenvolvedor Jr."
+                                        class="form-control text-dark mb-1" value="<%= curriculo.expcargo1 %>" required="" type="text">
+                                    <input name="expperiodo1"
+                                        placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value="<%= curriculo.expperiodo1 %>" required="" type="text">
+                                    <input name="expempresa1" placeholder="Nome da empresa"
+                                        class="form-control text-dark mb-1" value="<%= curriculo.expempresa1 %>" required="" type="text">
+                                    <div class="primeiro-paragrafo">
+                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao1 %>' id='pegarExpfuncao1'>
+                                        <textarea name="expfuncao1" class="form-control text-dark h-100"
+                                            id="expfuncao1" rows="3"
+                                            placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."
+                                            required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label">Experiência mais importante ou com maior tempo:
+                                    <h11>*</h11></label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="expcargo2" placeholder="Cargo. Ex.: Desenvolvedor Jr."
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expcargo2 %>' required="" type="text">
+                                    <input name="expperiodo2"
+                                        placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expperiodo2 %>' required="" type="text">
+                                    <input name="expempresa2" placeholder="Nome da empresa"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expempresa2 %>' required="" type="text">
+                                    <div class="primeiro-paragrafo">
+                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao2 %>' id='pegarExpfuncao2'>
+                                        <textarea name="expfuncao2" class="form-control text-dark h-100"
+                                            id="expfuncao2" rows="3"
+                                            placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."
+                                            required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-10 control-label">Experiência mais importante ou com maior
+                                    tempo:</label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="expcargo3" placeholder="Cargo. Ex.: Desenvolvedor Jr."
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expcargo3 %>' type="text">
+                                    <input name="expperiodo3"
+                                        placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expperiodo3 %>' type="text">
+                                    <input name="expempresa3" placeholder="Nome da empresa"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.expempresa3 %>' type="text">
+                                    <div class="primeiro-paragrafo">
+                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao3 %>' id='pegarExpfuncao3'>
+                                        <textarea name="expfuncao3" class="form-control text-dark h-100"
+                                            id="expfuncao3" rows="3"
+                                            placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-10 control-label mb-2 bold" for="Nome">Digite aqui a sua formação
+                                acadêmica e cursos concluídos ou
+                                em andamento. É importante destacar somente os principais que estejam ligados a área na
+                                qual você está buscando.<h11>*</h11></label>
+                            <div class="form-group">
+                                <label class="col-md-5 control-label">Formação ou curso: <h11>*</h11></label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="cursonome1"
+                                        placeholder="Nome do curso.  Ex.: Desenvolvimento Web Full Stack"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursonome1 %>' required="" type="text">
+                                    <input name="cursoperiodo1"
+                                        placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursoperiodo1 %>' required="" type="text">
+                                    <input name="cursoinstituicao1" placeholder="Nome da instituição de ensino"
+                                        class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao1 %>' required="" type="text">
+                                    <div class="curso-conhecimento">
+                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento1 %>' id='pegarCursoconhecimento1'>
+                                        <textarea name="cursoconhecimento1" id='cursoconhecimento1' class="form-control text-dark h-100 mb-1"
+                                            required="" rows="3" placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-5 control-label">Formação ou curso:</label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="cursonome2"
+                                        placeholder="Nome do curso.  Ex.: Desenvolvimento Web Full Stack"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursonome2 %>' type="text">
+                                    <input name="cursoperiodo2"
+                                        placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursoperiodo2 %>' type="text">
+                                    <input name="cursoinstituicao2"
+                                        placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."
+                                        class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao2 %>' type="text">
+                                    <div class="curso-conhecimento">
+                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento2 %>' id='pegarCursoconhecimento2'>
+                                        <textarea name="cursoconhecimento2" class="form-control text-dark h-100 mb-1"
+                                            rows="3" id='cursoconhecimento2'
+                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-5 control-label">Formação ou curso:</label>
+                                <div class="col-md-8 mb-2">
+                                    <input name="cursonome3"
+                                        placeholder="Nome do curso.  Ex.: Desenvolvimento Web Full Stack"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursoinstituicao3 %>' type="text">
+                                    <input name="cursoperiodo3"
+                                        placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021"
+                                        class="form-control text-dark mb-1" value='<%= curriculo.cursoinstituicao3 %>' type="text">
+                                    <input name="cursoinstituicao3" placeholder="Nome da instituição de ensino"
+                                        class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao3 %>' type="text">
+                                    <div class="curso-conhecimento">
+                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento3 %>' id='pegarCursoconhecimento1'>
+                                        <textarea name="cursoconhecimento3" class="form-control text-dark h-100 mb-1"
+                                            rows="3" id='cursoconhecimento3'
+                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-10 control-label mb-2 bold">Digite aqui as suas hardskills e seu nível
+                                de domínio de 0% a 100%. Aconselhável
+                                digitar sempre um número par de skills para não prejudicar o design do seu currículo. É
+                                importante destacar somente as skills que você
+                                tem mais domínio. (Pelo menos 3)
+                                <h11>*</h11>
+                            </label>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 1: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome1" placeholder="Ex.: Javascript" value='<%= curriculo.hardnome1 %>'
+                                        class="form-control text-dark mb-1" required="" type="text">
+                                    <input name="hardnota1" placeholder="Ex.: 90%" value='<%= curriculo.hardnota1 %>'
+                                        class="form-control w-50 text-dark mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 2: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome2" placeholder="Ex.: Java" value='<%= curriculo.hardnome2 %>' class="form-control text-dark mb-1"
+                                        required="" type="text">
+                                    <input name="hardnota2" placeholder="Ex.: 80%" value='<%= curriculo.hardnota2 %>'
+                                        class="form-control w-50 text-dark mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 3: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome3" placeholder="Ex.: Node.js" value='<%= curriculo.hardnome3 %>'
+                                        class="form-control text-dark mb-1" required="" type="text">
+                                    <input name="hardnota3" placeholder="Ex.: 85%" value='<%= curriculo.hardnota3 %>'
+                                        class="form-control w-50 text-dark mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 4: </label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome4" placeholder="Ex.: Javascript" value='<%= curriculo.hardnome4 %>'
+                                        class="form-control text-dark mb-1" type="text">
+                                    <input name="hardnota4" placeholder="Ex.: 90%" value='<%= curriculo.hardnota4 %>'
+                                        class="form-control w-50 text-dark mb-1" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 5: </label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome5" placeholder="Ex.: Javascript" value='<%= curriculo.hardnome5 %>'
+                                        class="form-control text-dark mb-1" type="text">
+                                    <input name="hardnota5" placeholder="Ex.: 90%" value='<%= curriculo.hardnota5 %>'
+                                        class="form-control w-50 text-dark mb-1" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Hardskill 6: </label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="hardnome6" placeholder="Ex.: Javascript" value='<%= curriculo.hardnome6 %>'
+                                        class="form-control text-dark mb-1" type="text">
+                                    <input name="hardnota6" placeholder="Ex.: 90%" value='<%= curriculo.hardnota6 %>'
+                                        class="form-control w-50 text-dark mb-1" type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <label class="col-md-10 control-label mb-2 bold">Digite aqui as suas 4 principais softskills
+                                e classifique-as entre 0.0 e 5.0.
+                                É aconselhável incluir competências e aptidões pessoais que se destacarão em um ambiente
+                                de trabalho relacionado ao emprego que você procura.
+                                <h11>*</h11>
+                            </label>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Softskill 1: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="softnome1" placeholder="Ex.: Proatividade" value='<%= curriculo.softnome1 %>'
+                                        class="form-control text-dark mb-1" required="" type="text">
+                                    <input name="softnota1" placeholder="Ex.: 4.5" value='<%= curriculo.softnota1 %>'
+                                        class="form-control w-50 text-dark mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Softskill 2: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="softnome2" placeholder="Ex.: Comunicação" value='<%= curriculo.softnome2 %>'
+                                        class="form-control text-dark mb-1" required="" type="text">
+                                    <input name="softnota2" placeholder="Ex.: 5" value='<%= curriculo.softnota2 %>'
+                                        class="form-control text-dark w-50 mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Softskill 3: <h11>*</h11></label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="softnome3" placeholder="Ex.: Concentração" value='<%= curriculo.softnome3 %>'
+                                        class="form-control text-dark mb-1" required="" type="text">
+                                    <input name="softnota3" placeholder="Ex.: 4.25" value='<%= curriculo.softnota3 %>'
+                                        class="form-control text-dark w-50 mb-1" required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Softskill 4: </label>
+                                <div class="col-md-3 mb-2">
+                                    <input name="softnome4" placeholder="Ex.: Organização" value='<%= curriculo.softnome4 %>'
+                                        class="form-control text-dark mb-1" type="text">
+                                    <input name="softnota4" placeholder="Ex.: 3.85" value='<%= curriculo.softnota4 %>'
+                                        class="form-control text-dark w-50 mb-1" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="Cadastrar"></label>
+                            <div class="col-md-8 mb-4">
+                                <button id="cadastrar" name="cadastrar" class="btn btn-success px-4 py-2"
+                                    type="Submit">Editar</button>
+                                <a href='/usuario' id="voltar" name="voltar" class="btn btn-danger px-4 py-2">Voltar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>

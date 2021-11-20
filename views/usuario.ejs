@@ -42,14 +42,14 @@
                     </div>
                 <div class="row w-100 d-flex justify-content-around">
                     <%for (let[i, curriculo ] of curriculos.entries()){%>
-                    <div class="card bg-light" style="width: 18rem;">
-                        <img class="card-img-top mt-3" src="/images/avatar/avatar<%= ++i %>.png" alt="Card image cap">
+                    <div class="card bg-light d-flex" style="width: 18rem;">
+                        <img class="imagem-curriculo align-self-center card-img-top mt-3" src="/images/avatar/avatar<%= ++i %>.png" alt="Card image cap">
                         <div class="card-body d-flex justify-content-center p-0 pt-3">
-                            <h3 class="card-title"><%=curriculo.profissao%></h3>
+                            <h4 class="card-title"><%=curriculo.profissao%></h4>
                         </div>
                         <div class="card-body d-flex justify-content-around align-center">
                             <a class="btn btn-secondary py-2 px-3" href="/usuario/curriculo/<%=curriculo.id%>" role="button">Visualizar »</a>
-                            <a class="btn btn-danger py-2 px-4" href="#" role="button">Editar »</a>
+                            <a class="btn btn-danger py-2 px-4" href="/usuario/curriculo/editar/<%=curriculo.id%>" role="button">Editar »</a>
                         </div>
                     </div>
                     <% } %>

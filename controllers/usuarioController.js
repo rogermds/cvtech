@@ -44,7 +44,6 @@ const usuarioController = {
 				if(err) {
 					return console.log(err);
 				}
-				console.log('Avatar antigo removido');
 			})
 			novosDados.avatar = arquivo.filename;
 			editarUsuario.update(novosDados);

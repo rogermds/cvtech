@@ -22,7 +22,6 @@ const indexController = {
 	postLogin: async (req, res) => {
 		const errors = validationResult(req);
 		let dadosBody = req.body;
-		console.log(errors);
 		if (errors.isEmpty()) {
 			let usuarioLogin = await Usuario.findOne({
 				where: {
@@ -55,7 +54,6 @@ const indexController = {
 					console.log(error);
 				});
 		} else {
-			console.log(errors);
 			return res.render("login", {
 				errors: errors.mapped(),
 				old: dadosBody,
@@ -88,7 +86,6 @@ const indexController = {
 				erroSenha: [],
 			});
 		} else {
-			console.log(errors);
 			return res.render("cadastrar-usuario", {
 				errors: errors.mapped(),
 				old: dados,

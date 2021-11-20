@@ -11,7 +11,7 @@ router.get("/login", indexController.getLogin);
 router.get("/logout", indexController.getLogout);
 router.get("/cadastrar", indexController.getCadastrar);
 
-router.post("/login", validator.validaCamposLogin, indexController.postLogin);
+router.post("/login", indexController.postLogin);
 router.post("/cadastrar", uploadAvatar.single("avatar"), validator.validaCamposCadastoUsuario, indexController.postCadastrar);
 
 

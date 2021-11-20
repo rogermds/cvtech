@@ -29,10 +29,20 @@ header .botoes {
 	margin-right: 10px;
   	width: auto;
 	font-size: 16px !important;
+	height: 85px;
+}
+header .div-menu-header {
+	height: 100%;
+}
+
+header .div-foto-avatar {
+	height: 100%;
 }
 
 header .foto-avatar {
-	width: 65px;
+	width: 70px;
+	border-radius: 50%;
+	height: 100%;
 }
 
 header div.dropdown a {
@@ -250,4 +260,13 @@ p.text-muted {
 
 .primeiro-paragrafo {
 	height: 90px;
+}
+
+.curso-conhecimento {
+	height: 65px;
+}
+
+img.imagem-curriculo {
+	height: 150px;
+	width: 150px;
 }

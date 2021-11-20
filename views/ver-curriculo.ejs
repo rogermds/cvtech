@@ -65,7 +65,9 @@
             </div>
             <p><%= curriculo.resumo1 %></p>
             <p><%= curriculo.resumo2 %></p>
+            <% if (curriculo.resumo3) { %> 
             <p><%= curriculo.resumo3 %></p>
+            <% } %> 
           </article>
           <article>
             <div class="article-title-wrapper">
@@ -85,12 +87,14 @@
                 <h6 class="timeline-place"><%= curriculo.expempresa2 %></h6>
                 <p class="timeline-text"><%= curriculo.expfuncao2 %></p>
               </li>
+              <% if (curriculo.expcargo3) {%> 
               <li>
                 <h4 class="timeline-title"><%= curriculo.expcargo3 %></h4>
                 <h5 class="timeline-time"><%= curriculo.expperiodo3 %></h5>
                 <h6 class="timeline-place"><%= curriculo.expempresa3 %></h6>
                 <p class="timeline-text"><%= curriculo.expfuncao3 %></p>
               </li>
+              <% } %> 
             </ul>
           </article>
           <article>
@@ -105,18 +109,22 @@
                 <h6 class="timeline-place"><%= curriculo.cursoinstituicao1 %></h6>
                 <p class="timeline-text"><%= curriculo.cursoconhecimento1 %></p>
               </li>
+              <% if(curriculo.cursonome2) { %> 
               <li>
                 <h4 class="timeline-title"><%= curriculo.cursonome2 %></h4>
                 <h5 class="timeline-time"><%= curriculo.cursoperiodo2 %></h5>
                 <h6 class="timeline-place"><%= curriculo.cursoinstituicao2 %></h6>
                 <p class="timeline-text"><%= curriculo.cursoconhecimento2 %></p>
               </li>
+              <% } %> 
+              <% if(curriculo.cursonome3) { %>
               <li>
                 <h4 class="timeline-title"><%= curriculo.cursonome3 %></h4>
                 <h5 class="timeline-time"><%= curriculo.cursoperiodo3 %></h5>
                 <h6 class="timeline-place"><%= curriculo.cursoinstituicao3 %></h6>
                 <p class="timeline-text"><%= curriculo.cursoconhecimento3 %></p>
               </li>
+              <% } %>
             </ul>
           </article>
           <article>
@@ -149,6 +157,7 @@
                   </div>
                 </div>
               </div>
+              <% if (curriculo.hardnome4) { %>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota4 %>;">
                   <div class="progress-text">
@@ -157,6 +166,8 @@
                   </div>
                 </div>
               </div>
+              <% } %>
+              <% if (curriculo.hardnome5) { %>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota5 %>;">
                   <div class="progress-text">
@@ -165,6 +176,8 @@
                   </div>
                 </div>
               </div>
+              <% } %>
+              <% if (curriculo.hardnome6) { %> 
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <%= curriculo.hardnota6 %>;">
                   <div class="progress-text">
@@ -173,6 +186,7 @@
                   </div>
                 </div>
               </div>
+              <% } %> 
             </div>
             <div class="soft-skills">
               <div class="soft-skill">
@@ -187,10 +201,12 @@
                 <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota3 %>;"></div>
                 <h4 class="soft-skill-label"><%= curriculo.softnome3 %></h4>
               </div>
+              <% if (curriculo.softnome4) { %>
               <div class="soft-skill">
                 <div class="soft-skill-rating" style="--rating: <%= curriculo.softnota4 %>;"></div>
                 <h4 class="soft-skill-label"><%= curriculo.softnome4 %></h4>
               </div>
+              <% } %> 
             </div>
           </article>
         </section>

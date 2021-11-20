@@ -45,13 +45,13 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			resumo1: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			resumo2: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			resumo3: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			expcargo1: {
 				type: Sequelize.STRING,
@@ -63,7 +63,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			expfuncao1: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			expcargo2: {
 				type: Sequelize.STRING,
@@ -75,7 +75,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			expfuncao2: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			expcargo3: {
 				type: Sequelize.STRING,
@@ -87,7 +87,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			expfuncao3: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			cursonome1: {
 				type: Sequelize.STRING,
@@ -99,7 +99,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			cursoconhecimento1: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			cursonome2: {
 				type: Sequelize.STRING,
@@ -111,7 +111,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			cursoconhecimento2: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			cursonome3: {
 				type: Sequelize.STRING,
@@ -123,7 +123,7 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			cursoconhecimento3: {
-				type: Sequelize.STRING,
+				type: Sequelize.TEXT,
 			},
 			hardnome1: {
 				type: Sequelize.STRING,

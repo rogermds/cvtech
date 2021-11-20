@@ -99,20 +99,20 @@
                                 3 parágrafos. Aconselhável no mínimo 2 parágrafos preenchidos. <h11>*</h11></label>
                             <div class="form-group">
                                 <label class="col-md-2control-label">Primeiro parágrafo: <h11>*</h11></label>
-                                <div class="col-md-4">
-                                    <input name="resumo1" placeholder="" class="form-control" required="" type="text">
+                                <div class="primeiro-paragrafo col-md-7">
+                                    <textarea name="resumo1" class="form-control h-100" id="exampleFormControlTextarea1" rows="3" required=""></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2control-label">Segundo parágrafo: <h11>*</h11></label>
-                                <div class="col-md-4">
-                                    <input name="resumo2" placeholder="" class="form-control" required="" type="text">
+                                <div class="primeiro-paragrafo col-md-7">
+                                    <textarea name="resumo2" class="form-control h-100" id="exampleFormControlTextarea1" rows="3" required=""></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2control-label" for="Nome">Terceiro parágrafo:</label>
-                                <div class="col-md-4">
-                                    <input name="resumo3" placeholder="" class="form-control" type="text">
+                                <div class="primeiro-paragrafo col-md-7">
+                                    <textarea name="resumo3" class="form-control h-100" id="exampleFormControlTextarea1" rows="3" required=""></textarea>
                                 </div>
                             </div>
                             <hr>
@@ -125,7 +125,10 @@
                                     <input name="expcargo1" placeholder="Cargo exercido" class="form-control mb-1" required="" type="text">
                                     <input name="expperiodo1" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
                                     <input name="expempresa1" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
-                                    <input name="expfuncao1" placeholder="Funções exercidas" class="form-control " required="" type="text">
+                                    <div class="primeiro-paragrafo">
+                                        <textarea name="expfuncao1" class="form-control h-100" id="exampleFormControlTextarea1" rows="3" placeholder="Funções exercidas"
+                                            required=""></textarea>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -134,7 +137,9 @@
                                     <input name="expcargo2" placeholder="Cargo exercido" class="form-control mb-1" required="" type="text">
                                     <input name="expperiodo2" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" required="" type="text">
                                     <input name="expempresa2" placeholder="Nome da empresa" class="form-control mb-1" required="" type="text">
-                                    <input name="expfuncao2" placeholder="Funções exercidas" class="form-control " required="" type="text">
+                                    <div class="primeiro-paragrafo">
+                                        <textarea name="expfuncao2" class="form-control h-100" id="exampleFormControlTextarea1" rows="3" placeholder="Funções exercidas" required=""></textarea>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -143,7 +148,10 @@
                                     <input name="expcargo3" placeholder="Cargo exercido" class="form-control mb-1" type="text">
                                     <input name="expperiodo3" placeholder="Período trabalhado na empresa. Ex.: 01/2021 - 10/2021" class="form-control mb-1" type="text">
                                     <input name="expempresa3" placeholder="Nome da empresa" class="form-control mb-1" type="text">
-                                    <input name="expfuncao3" placeholder="Funções exercidas" class="form-control " type="text">
+                                    <div class="primeiro-paragrafo">
+                                        <textarea name="expfuncao3" class="form-control h-100" id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="Funções exercidas" required=""></textarea>
+                                    </div>
                                 </div>
                             </div>
                             <hr>
@@ -170,7 +178,7 @@
                             <div class="form-group">
                                 <label class="col-md-2control-label">Formação ou curso:</label>
                                 <div class="col-md-7 mb-2">
-                                    <input name="cursonome3" placeholder="Nome do curso" class="form-control mb-1" required="" type="text">
+                                    <input name="cursonome3" placeholder="Nome do curso" class="form-control mb-1" type="text">
                                     <input name="cursoperiodo3" placeholder="Início e conclusão ou conclusão esperada. Ex.: 01/2021 - 10/2021" class="form-control mb-1" type="text">
                                     <input name="cursoinstituicao3" placeholder="Nome da instituição de ensino" class="form-control  mb-1" type="text">
                                     <input name="cursoconhecimento3" placeholder="Conhecimentos adquiridos" class="form-control  mb-1" type="text">
@@ -196,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Hardskill 3: </label>
+                                <label class="col-md-2control-label">Hardskill 3: <h11>*</h11></label>
                                 <div class="col-md-7 mb-2">
                                     <input name="hardnome3" placeholder="Ex.: Node.js" class="form-control mb-1" required="" type="text">
                                     <input name="hardnota3" placeholder="Ex.: 85%" class="form-control mb-1" required="" type="text">
@@ -250,10 +258,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2control-label">Softskill 4: <h11>*</h11></label>
+                                <label class="col-md-2control-label">Softskill 4: </label>
                                 <div class="col-md-7 mb-2">
-                                    <input name="softnome4" placeholder="Ex.: Organização" class="form-control mb-1" required="" type="text">
-                                    <input name="softnota4" placeholder="Ex.: 3.85" class="form-control mb-1" required="" type="text">
+                                    <input name="softnome4" placeholder="Ex.: Organização" class="form-control mb-1" type="text">
+                                    <input name="softnota4" placeholder="Ex.: 3.85" class="form-control mb-1" type="text">
                                 </div>
                             </div>
                         </div>

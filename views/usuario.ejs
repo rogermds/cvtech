@@ -21,8 +21,13 @@
                             recrutador que você tem o perfil
                             perfeito para a vaga pretendida. Um currículo que chame a atenção dos recrutadores aumentam
                             as chances de você ser chamado para uma entrevista! </p>
-                        <p><a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie o seu
-                                currículo »</a></p>
+                        <p>
+                            <% if(curriculos==0) { %>
+                                <a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie o seu currículo »</a>
+                            <% } else { %> 
+                                <a class="btn btn-secondary" href="/usuario/curriculo/criar" role="button">Crie um novo currículo »</a>
+                            <% } %> 
+                        </p>
                     </div>
                     <div class="col-md-6 text-muted">
                         <h2>Doação</h2>

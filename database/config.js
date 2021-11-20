@@ -8,7 +8,7 @@
 
 const config = {
 	username: "root",
-	password: "root",
+	password: "",
 	database: "cvtech",
 	host: "localhost",
 	dialect: "mysql",

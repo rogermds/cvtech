@@ -38,7 +38,11 @@ Os usuários cadastrados podem criar um currículo totalmente responsivo e que s
 - Abra o terminal e execute o comando `nodemon` para iniciar o projeto.
 - O projeto está configurado para abrir na porta 3000. Após iniciar o projeto, entre em `localhost:3000` em seu navegador para visualizar o projeto rodando localmente.
 - Efetue o cadastro, crie seu primeiro currículo e utilize o modo de impressão de seu navegador para salvar um PDF e salvá-lo em sua máquina.
+
 * As configurações para uma melhor impressão estão abaixo:
+* *É importante deixar a página no topo para que o lado esquerdo com a foto fique posicionado corretamente. 
+![chrome-print-out](https://user-images.githubusercontent.com/86385568/143189879-cda92462-954e-49af-8a0f-8c3c6f53b736.png)
+
 
 
 ## Observações importantes

@@ -90,10 +90,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="celular">Celular para contato: <h11>*</h11>
+                                <label class="col-md-5 control-label" for="celular">Celular para contato: <h11>*</h11>
                                     </label>
                                 <div class="col-md-3">
-                                    <input name="celular" placeholder="Ex.: 11 96161-5456" value='<%= curriculo.celular %>' class="form-control text-dark" required="" type="text">
+                                    <input name="celular" id='celular' placeholder="Ex.: 11 96161-5456" value='<%= curriculo.celular %>' class="form-control text-dark" required="" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -110,29 +110,26 @@
                             <div class="form-group">
                                 <label class="col-md-10 control-label">Primeiro parágrafo: <h11>*</h11></label>
                                 <div class="primeiro-paragrafo col-md-8">
-                                    <input type="text" class='d-none' value='<%= curriculo.resumo1 %>' id='pegarResumo1'>
                                     <textarea name="resumo1"
                                         placeholder='Profissional buscando oportunidade na área de Desenvolvimento ou Testes...'
-                                        class="form-control text-dark h-100" id="resumo1" rows="3" required=""></textarea>
+                                        class="form-control text-dark h-100" id="resumo1" rows="3" required=""><%= curriculo.resumo1 %></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-10 control-label">Segundo parágrafo: <h11>*</h11></label>
                                 <div class="primeiro-paragrafo col-md-8">
-                                    <input type="text" class='d-none' value='<%= curriculo.resumo2 %>' id='pegarResumo2'>
                                     <textarea name="resumo2" placeholder='Meu primeiro contato com programação foi ...'
-                                        value='<%= curriculo.resumo2 %>' class="form-control text-dark h-100" id="resumo2" rows="3"
-                                        required=""></textarea>
+                                        class="form-control text-dark h-100" id="resumo2" rows="3"
+                                        required=""><%= curriculo.resumo2 %></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-10 control-label" for="Nome">Terceiro parágrafo:</label>
                                 <div class="primeiro-paragrafo col-md-8">
-                                    <input type="text" class='d-none' value='<%= curriculo.resumo3 %>' id='pegarResumo3'>
                                     <textarea name="resumo3"
                                         placeholder='As minhas principais Hard Skills como desenvolvedor são...'
-                                        value='<%= curriculo.resumo3 %>' class="form-control text-dark h-100" id="resumo3" rows="3"
-                                        required=""></textarea>
+                                        class="form-control text-dark h-100" id="resumo3" rows="3"
+                                        required=""><%= curriculo.resumo3 %></textarea>
                                 </div>
                             </div>
                             <hr>
@@ -152,11 +149,10 @@
                                     <input name="expempresa1" placeholder="Nome da empresa"
                                         class="form-control text-dark mb-1" value="<%= curriculo.expempresa1 %>" required="" type="text">
                                     <div class="primeiro-paragrafo">
-                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao1 %>' id='pegarExpfuncao1'>
                                         <textarea name="expfuncao1" class="form-control text-dark h-100"
                                             id="expfuncao1" rows="3"
                                             placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."
-                                            required=""></textarea>
+                                            required=""><%= curriculo.expfuncao1 %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -172,11 +168,10 @@
                                     <input name="expempresa2" placeholder="Nome da empresa"
                                         class="form-control text-dark mb-1" value='<%= curriculo.expempresa2 %>' required="" type="text">
                                     <div class="primeiro-paragrafo">
-                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao2 %>' id='pegarExpfuncao2'>
                                         <textarea name="expfuncao2" class="form-control text-dark h-100"
                                             id="expfuncao2" rows="3"
                                             placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."
-                                            required=""></textarea>
+                                            required=""><%= curriculo.expfuncao2 %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -192,10 +187,9 @@
                                     <input name="expempresa3" placeholder="Nome da empresa"
                                         class="form-control text-dark mb-1" value='<%= curriculo.expempresa3 %>' type="text">
                                     <div class="primeiro-paragrafo">
-                                    <input type="text" class='d-none' value='<%= curriculo.expfuncao3 %>' id='pegarExpfuncao3'>
                                         <textarea name="expfuncao3" class="form-control text-dark h-100"
                                             id="expfuncao3" rows="3"
-                                            placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."></textarea>
+                                            placeholder="Funções exercidas.  Ex.: Criação de APIs, manuntenção de projetos..."><%= curriculo.expfuncao3 %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -216,9 +210,8 @@
                                     <input name="cursoinstituicao1" placeholder="Nome da instituição de ensino"
                                         class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao1 %>' required="" type="text">
                                     <div class="curso-conhecimento">
-                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento1 %>' id='pegarCursoconhecimento1'>
                                         <textarea name="cursoconhecimento1" id='cursoconhecimento1' class="form-control text-dark h-100 mb-1"
-                                            required="" rows="3" placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                            required="" rows="3" placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."><%= curriculo.cursoconhecimento1 %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -235,10 +228,9 @@
                                         placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."
                                         class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao2 %>' type="text">
                                     <div class="curso-conhecimento">
-                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento2 %>' id='pegarCursoconhecimento2'>
                                         <textarea name="cursoconhecimento2" class="form-control text-dark h-100 mb-1"
                                             rows="3" id='cursoconhecimento2'
-                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."><%= curriculo.cursoconhecimento2 %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -254,10 +246,9 @@
                                     <input name="cursoinstituicao3" placeholder="Nome da instituição de ensino"
                                         class="form-control text-dark  mb-1" value='<%= curriculo.cursoinstituicao3 %>' type="text">
                                     <div class="curso-conhecimento">
-                                        <input type="text" class='d-none' value='<%= curriculo.cursoconhecimento3 %>' id='pegarCursoconhecimento1'>
                                         <textarea name="cursoconhecimento3" class="form-control text-dark h-100 mb-1"
                                             rows="3" id='cursoconhecimento3'
-                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."></textarea>
+                                            placeholder="Conhecimentos adquiridos.  Ex.: Curso voltado para desenvolvimento com Node.js, Express, MySQL..."><%= curriculo.cursoconhecimento3 %></textarea>
                                     </div>
                                 </div>
                             </div>

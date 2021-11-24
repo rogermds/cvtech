@@ -28,10 +28,20 @@ const curriculoController = {
 		let { id } = req.params;
 		let curriculo = await Curriculo.findByPk(id);
 		let dadosCurriculo = {
+			id,
 			...curriculo.dataValues,
 			...req.session.user,
 		};
 		res.render("editar-curriculo", { curriculo: dadosCurriculo });
+	},
+	postEditarCurriculo: async (req, res) => {
+		let { id } = req.params;
+		console.log(id);
+		console.log(req.session);
+		let novosDados = req.body;
+		let editarCurriculo = await Curriculo.findByPk(id);
+		editarCurriculo.update(novosDados);
+		return res.redirect('/usuario/')
 	},
 };
 

@@ -13,5 +13,6 @@ router.get("/curriculo/:id", curriculoController.getVisualizarCurriculo);
 
 router.post("/editar", uploadAvatar.single("avatar"), usuarioController.postEditarUsuario);
 router.post("/curriculo/criar", curriculoController.postCriarCurriculo);
+router.post("/curriculo/editar/:id", curriculoController.postEditarCurriculo);
 
 module.exports = router;

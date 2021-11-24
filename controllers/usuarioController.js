@@ -10,6 +10,7 @@ const usuarioController = {
 			where: id,
 			include: { model: Curriculo },
 		}).then((resultado) => {
+			console.log(resultado);
 			res.render("usuario", {
 				curriculos: resultado[0].Curriculos,
 			});
@@ -40,7 +41,7 @@ const usuarioController = {
 			return res.redirect("/usuario");
 		}
 		if(oldAvatar && req.file){
-			fs.unlink(path.resolve('public/images/avatar',oldAvatar), (err)=>{
+			fs.unlink(path.resolve('public/images/avatar', oldAvatar), (err)=>{
 				if(err) {
 					return console.log(err);
 				}

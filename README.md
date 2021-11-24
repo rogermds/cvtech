@@ -1,7 +1,7 @@
 # CVTech - Projeto Full Stack
 
 # Vídeo do projeto
-sdfgsdfgsdgfsdgf
+https://user-images.githubusercontent.com/86385568/143194285-efe3287d-c8e1-4492-abf2-a753594a386f.mp4
 
 # 1) Sobre o projeto
 
@@ -33,21 +33,24 @@ Os usuários cadastrados podem criar um currículo totalmente responsivo e que s
 # 4) Como executar o projeto
 
 - Clone a pasta do projeto ou efetue o download em zip.
-- Instale as bibliotecas do npm com `npm install`
-- Entre em `database/config.js` e atualize as informações de `username` e `password` que foram configuradas na instalação do MySQL.
+- Instale as dependências do npm com `npm install`
+- Entre em `database/config.js` e atualize as informações de `username` e `password` que foram configuradas na instalação do MySQL em sua máquina.
+- O Sequelize está configurado para criar toda a modelagem do MySQL automaticamente dentro do MySQL (observe que é necessário configurar o passo acima corretamente para que isso ocorra sem erros). Utilize os comandos `npx sequelize db:create` e `npx sequelize db:migrate` para criar o banco de dados e as suas respectivas models.
 - Abra o terminal e execute o comando `nodemon` para iniciar o projeto.
 - O projeto está configurado para abrir na porta 3000. Após iniciar o projeto, entre em `localhost:3000` em seu navegador para visualizar o projeto rodando localmente.
 - Efetue o cadastro, crie seu primeiro currículo e utilize o modo de impressão de seu navegador para salvar um PDF e salvá-lo em sua máquina.
+- Este projeto está hospedado no Heroku e pode ser utilizado publicamente por qualquer usuário em: https://cv-tech.herokuapp.com/
+*Para garantir a segurança do banco de dados, estamos com *
 
-* As configurações para uma melhor impressão estão abaixo:
-* *É importante deixar a página no topo para que o lado esquerdo com a foto fique posicionado corretamente. 
+* As configurações para uma melhor impressão estão abaixo: <br/>
+*É importante deixar a página no topo para que o lado esquerdo com a foto fique posicionado corretamente.* 
 ![chrome-print-out](https://user-images.githubusercontent.com/86385568/143189879-cda92462-954e-49af-8a0f-8c3c6f53b736.png)
 
 
 
 ## Observações importantes
 
-Para que seja possível rodar a aplicação sem nenhum problema, é imprescindível a instalação do Node.js, NPM e sua dependências e MySQL na máquina que irá rodar a aplicação. Também é necessário verificar nas configurações se o MySQL está rodando com os mesmos parâmetros configurados em `config/database.js`.
+Para que seja possível rodar a aplicação sem nenhum problema, é imprescindível a instalação do Node.js, NPM e suas dependências e o MySQL na máquina que irá rodar a aplicação. Também é necessário verificar nas configurações se o MySQL está rodando com os mesmos parâmetros configurados em `config/database.js`.
 
 # Autores
 

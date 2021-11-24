@@ -10,7 +10,8 @@
                 <div class="col-md-3">Preencha as suas informações no formulário ao lado e cadastre seu currículo ao final da página. <br><br>
                     <b class='text-warning'>Adicione os campos conforme solicitado para ter a melhor formatação.</b></div>
                 <div class="col-md-9">
-                    <form action="/usuario/curriculo/editar/<%= curriculo.id %>" method="POST">
+                    <form action="/usuario/curriculo/editar/<%=curriculo.idCurriculo%>" method="POST">
+                        <input type="hidden" name="id" value="<%=curriculo.idCurriculo%>">
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-md-11 control-label">
@@ -360,9 +361,14 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="editar"></label>
                             <div class="col-md-8 mb-4">
+<<<<<<< HEAD
                                 <button id="editar" name="editar" class="btn btn-success px-4 py-2"
                                     type="Submit">Editar</button>
                                 <a href='/usuario' id="voltar" name="voltar" class="btn btn-danger px-4 py-2">Voltar</a>
+=======
+                                <button id="cadastrar" name="cadastrar" class="btn btn-success px-4 py-2"
+                                    type="submit">Editar</button>
+>>>>>>> 6fba3292f81466b2b97249c6a385996ce79d054f
                             </div>
                         </div>
                     </form>

@@ -32,7 +32,7 @@ const usuarioController = {
 			novosDados.avatar = oldAvatar;
 			editarUsuario.update(novosDados);
 			let novaSession = {
-				id: id,
+				id,
 				...novosDados
 			}
 			delete novaSession.senha;
@@ -50,7 +50,7 @@ const usuarioController = {
 			editarUsuario.update(novosDados);
 			
 			let novaSession = {
-				id: id,
+				id,
 				...novosDados
 			}
 			delete novaSession.senha;
@@ -62,7 +62,7 @@ const usuarioController = {
 		novosDados.avatar = arquivo.filename;
 		editarUsuario.update(novosDados);
 		let novaSession = {
-			id: id,
+			id,
 			...novosDados
 		}
 		delete novaSession.senha;

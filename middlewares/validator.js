@@ -65,5 +65,5 @@ const validaCamposEditarUsuario = [
 module.exports = {
 	validaCamposCadastroUsuario,
 	validaCamposLogin,
-	validaCamposEditarUsuario,
+	validaCamposEditarUsuario
 };

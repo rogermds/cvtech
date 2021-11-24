@@ -33,7 +33,6 @@ const curriculoController = {
 			...req.session.user,
 			idCurriculo: id
 		};
-		console.log(dadosCurriculo);
 		res.render("editar-curriculo", { curriculo: dadosCurriculo });
 	},
 	postEditarCurriculo: async (req, res) => {

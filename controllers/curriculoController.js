@@ -30,8 +30,24 @@ const curriculoController = {
 		let dadosCurriculo = {
 			...curriculo.dataValues,
 			...req.session.user,
+			idCurriculo: id
 		};
+		console.log(dadosCurriculo);
 		res.render("editar-curriculo", { curriculo: dadosCurriculo });
+	},
+	postEditarCurriculo: async (req, res) => {
+		let id = req.body.id;
+		//let { id } = req.params;
+		console.log("ID do curriculo: "+id)
+		let dados = req.body;
+		let curriculo = await Curriculo.findByPk(id);
+		let novosDados = {
+			...dados,
+			id
+		}
+		curriculo.update(novosDados);
+		
+		res.redirect("/usuario");
 	},
 };
 

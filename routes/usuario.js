@@ -9,6 +9,7 @@ router.get("/", usuarioController.getUsuarioIndex);
 router.get("/editar", usuarioController.getEditarUsuario);
 router.get("/curriculo/criar", curriculoController.getCriarCurriculo);
 router.get("/curriculo/editar/:id", curriculoController.getEditarCurriculo);
+router.post("/curriculo/editar/:id", curriculoController.postEditarCurriculo);
 router.get("/curriculo/:id", curriculoController.getVisualizarCurriculo);
 
 router.post("/editar", uploadAvatar.single("avatar"), usuarioController.postEditarUsuario);

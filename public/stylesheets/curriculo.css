@@ -303,28 +303,20 @@ article {
 .controlls{
   display: block;
   position: fixed;
-  top: 5px;
-  right: 5px;
-}
-/*Button imprimir*/
-.controlls #btnPrint{
-  background-color: #3c6e71;
-  color: #eee;
-}
-/*Button voltar*/
-.controlls #btnBack{
-  background-color: #b57a7a;
-  color: #eee;
-  margin-top: 5px; 
+  top: 20px;
+  right: 40px;
 }
 /*Imagem imprimir*/
 .controlls #btPrt{
   margin-top: 5px;
   width: 40px;
+  cursor: pointer;
 }
 /*Imagem voltar*/
 .controlls #btBck{
+  margin-top: 15px;
   width: 40px;
+  cursor: pointer;
 }
 /*------------------*/
 

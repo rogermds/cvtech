@@ -3,14 +3,6 @@ const controlls = document.querySelector(".controlls");
 
 
 window.addEventListener("load", ()=>{
-    //recebendo a referencia dos botões do DOM para criar evento
-    let btnPrint = document.getElementById("btnPrint");
-    let btnBack = document.getElementById("btnBack");
-    //recebendo referenrecia das imagens do DOM para criar evento de click
-    btnPrint.addEventListener("click", printView);
-    btnBack.addEventListener("click", backPage);;
-    //-------------------------------------------
-
     //recebendo referenrecia das imagens do DOM para criar evento de click
     let btnPrt = document.getElementById("btPrt");
     let btnBck = document.getElementById("btBck");

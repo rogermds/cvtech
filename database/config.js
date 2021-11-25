@@ -1,6 +1,6 @@
 const config = {
 	username: "root",
-	password: "",
+	password: "root",
 	database: "cvtech",
 	host: "localhost",
 	dialect: "mysql",

@@ -10,7 +10,6 @@ const usuarioController = {
 			where: id,
 			include: { model: Curriculo },
 		}).then((resultado) => {
-			console.log(resultado);
 			res.render("usuario", {
 				curriculos: resultado[0].Curriculos,
 			});

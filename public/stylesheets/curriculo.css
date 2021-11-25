@@ -299,6 +299,36 @@ article {
   text-align: center;
 }
 
+/*Div botoes*/
+.controlls{
+  display: block;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+}
+/*Button imprimir*/
+.controlls #btnPrint{
+  background-color: #3c6e71;
+  color: #eee;
+}
+/*Button voltar*/
+.controlls #btnBack{
+  background-color: #b57a7a;
+  color: #eee;
+  margin-top: 5px; 
+}
+/*Imagem imprimir*/
+.controlls #btPrt{
+  margin-top: 5px;
+  width: 40px;
+}
+/*Imagem voltar*/
+.controlls #btBck{
+  width: 40px;
+}
+/*------------------*/
+
+
 @media (max-width: 1024px) {
   .soft-skills {
     flex-wrap: wrap;
